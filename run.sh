@@ -4,25 +4,13 @@ echo "================================================="
 echo "   Starting CHAKRAVYUH Environment Setup...      "
 echo "================================================="
 
-# Detect OS
-OS_TYPE="unknown"
-case "$OSTYPE" in
-  linux*)   OS_TYPE="linux" ;;
-  darwin*)  OS_TYPE="mac" ;; 
-  msys*|cygwin*|mingw*) OS_TYPE="windows" ;;
-  *)        OS_TYPE="unknown" ;;
-esac
-
-echo "[*] Detected OS: $OS_TYPE"
-
-# Set OS specific variables
-if [ "$OS_TYPE" == "windows" ]; then
-    PYTHON_CMD="python"
-    VENV_ACTIVATE="venv/Scripts/activate"
-else
+# Use python3 by default on Mac/Linux, but fallback to python if python3 doesn't exist
+if command -v python3 &> /dev/null; then
     PYTHON_CMD="python3"
-    VENV_ACTIVATE="venv/bin/activate"
+else
+    PYTHON_CMD="python"
 fi
+VENV_ACTIVATE="venv/bin/activate"
 
 # Check if Python is installed
 if ! command -v $PYTHON_CMD &> /dev/null; then

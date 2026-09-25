@@ -7,22 +7,26 @@ CHAKRAVYUH is a cutting-edge law enforcement portal designed to analyze criminal
 - **Python 3.10+** (Added to system PATH)
 - **Node.js & npm**
 - **Neo4j Desktop / Server** running locally at `bolt://localhost:7687` (Default credentials: `neo4j` / `password`)
-- **Git Bash** (Required for Windows users to run the startup script)
 
-## Quick Start (All OS: Windows, Linux, Mac)
+## Quick Start
 
-We provide a universal `run.sh` script to automatically setup the environment, install required dependencies, and start all necessary services.
+We provide automated setup scripts to configure the environment, install required dependencies, and start all necessary services with a single command.
 
-> **Windows Users:** You must run this script using **Git Bash**. Right-click in the project folder and select "Open Git Bash here".
-
+### **Mac / Linux**
+Open your terminal and run the shell script:
 ```bash
-# Run the automated setup and start script
 ./run.sh
 ```
 
-**What `run.sh` does:**
-- Detects your operating system (Windows/Linux/Mac).
-- Sets up a Python virtual environment automatically if one does not exist.
+### **Windows**
+Open **PowerShell** (you can right-click the folder and select "Open in Terminal") and run the script:
+```powershell
+.\run.ps1
+```
+*(Note: If you get an execution policy error, run `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass` first).*
+
+**What the setup scripts do:**
+- Detects your system and sets up a Python virtual environment automatically if one does not exist.
 - Installs all Python dependencies and downloads required ML models (`spaCy`).
 - Installs necessary Node.js modules for the local blockchain if missing.
 - Boots up the Hardhat local blockchain and deploys the smart contract.
