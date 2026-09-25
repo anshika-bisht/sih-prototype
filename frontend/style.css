@@ -1,0 +1,79 @@
+
+body {
+    background-color: #0f172a; 
+    color: #cbd5e1; 
+}
+
+#cy {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: #0b101a; 
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 30px 30px;
+    background-position: center center;
+}
+
+.custom-scrollbar::-webkit-scrollbar,
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track,
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb {
+    background: #334155; 
+    border-radius: 0;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:hover {
+    background: #475569; 
+}
+
+input[type="checkbox"] {
+    accent-color: #475569;
+}
+
+.verified-badge {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    padding: 2px 6px;
+    font-size: 0.65rem;
+    font-family: 'Roboto Mono', monospace;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+}
+
+.verified-badge svg {
+    width: 12px;
+    height: 12px;
+    margin-right: 4px;
+}
+
+.unverified-badge {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    padding: 2px 6px;
+    font-size: 0.65rem;
+    font-family: 'Roboto Mono', monospace;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+}
+
+@keyframes tamperPulse {
+    0% { background-color: rgba(127, 29, 29, 0.9); }
+    50% { background-color: rgba(153, 27, 27, 0.95); }
+    100% { background-color: rgba(127, 29, 29, 0.9); }
+}
+#tamper-alert {
+    animation: tamperPulse 2s infinite;
+}

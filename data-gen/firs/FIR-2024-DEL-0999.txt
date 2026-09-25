@@ -1,0 +1,20 @@
+======================================================================
+FIRST INFORMATION REPORT (Under Section 154 Cr.P.C. / BNSS)
+STATE: DELHI POLICE
+DISTRICT: SOUTH WEST
+POLICE STATION: VASANT KUNJ
+FIR NO: FIR-2024-DEL-0999
+DATE & TIME: 2024-11-20 18:00
+INVESTIGATING OFFICER: INSP. K.L. SHARMA
+OFFENSE / SECTIONS: IPC 420 (FRAUD)
+STATUS: CLOSED
+======================================================================
+
+INCIDENT NARRATIVE:
+Economic Offenses Wing investigated a shell company named Apex Traders for GST fraud. The company's registered address was fake. The listed owner, Rudra Pratap, was questioned but produced documents proving his identity was stolen to register the company. The investigating team found that the company's primary corporate asset was a black SUV, DL-9C-1122, which was reported stolen two months prior. Case closed due to lack of leads on the actual operators.
+
+EVIDENCE RECOVERED / ATTACHED:
+- Digital/Telecom: None
+- Financial: Apex Traders corporate filings
+- Physical: Vehicle DL-9C-1122 linked to corporate registry
+======================================================================

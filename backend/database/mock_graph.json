@@ -1,0 +1,2250 @@
+{
+    "nodes": [
+        {
+            "data": {
+                "id": "FIR-2026-DEL-0101",
+                "type": "CASE",
+                "label": "FIR-2026-DEL-0101",
+                "case_ids": [
+                    "FIR-2026-DEL-0101"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "9811023451",
+                "type": "PHONE",
+                "label": "9811023451",
+                "case_ids": [
+                    "FIR-2026-DEL-0101",
+                    "FIR-2026-HR-0622",
+                    "uplad1",
+                    "upload1"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "DL04CC8891",
+                "type": "VEHICLE",
+                "label": "DL04CC8891",
+                "case_ids": [
+                    "FIR-2026-DEL-0101",
+                    "FIR-2026-HR-0622",
+                    "FIR-2025-HR-0442",
+                    "uplad1",
+                    "upload1"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "VIKRA",
+                "type": "ORGANIZATION",
+                "label": "VIKRA",
+                "case_ids": [
+                    "FIR-2026-DEL-0101"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "##uz Khas",
+                "type": "LOCATION",
+                "label": "##uz Khas",
+                "case_ids": [
+                    "FIR-2026-DEL-0101",
+                    "FIR-2025-DEL-0042"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "Cha",
+                "type": "PERSON",
+                "label": "Cha",
+                "case_ids": [
+                    "FIR-2026-DEL-0101",
+                    "FIR-2026-DEL-1011",
+                    "FIR-2025-HR-0442",
+                    "FIR-2026-CHE-777",
+                    "uplad1",
+                    "upload1"
+                ],
+                "pageRank": 0.3,
+                "betweenness": 135
+            }
+        },
+        {
+            "data": {
+                "id": "##ran Hari",
+                "type": "PERSON",
+                "label": "##ran Hari",
+                "case_ids": [
+                    "FIR-2026-DEL-0101",
+                    "FIR-2026-DEL-1011",
+                    "FIR-2025-HR-0442",
+                    "FIR-2026-CHE-777",
+                    "uplad1",
+                    "upload1"
+                ],
+                "pageRank": 0.3,
+                "betweenness": 120
+            }
+        },
+        {
+            "data": {
+                "id": "State Bank of India",
+                "type": "ORGANIZATION",
+                "label": "State Bank of India",
+                "case_ids": [
+                    "FIR-2026-DEL-0101",
+                    "FIR-2026-DEL-1011",
+                    "uplad1",
+                    "FIR-2026-RJ-0332",
+                    "upload1"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "Delhi",
+                "type": "LOCATION",
+                "label": "Delhi",
+                "case_ids": [
+                    "FIR-2026-DEL-0101",
+                    "FIR-2026-RJ-0781",
+                    "uplad1",
+                    "upload1"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "FIR-2026-DEL-0511",
+                "type": "CASE",
+                "label": "FIR-2026-DEL-0511",
+                "case_ids": [
+                    "FIR-2026-DEL-0511"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "9999888877",
+                "type": "PHONE",
+                "label": "9999888877",
+                "case_ids": [
+                    "FIR-2026-DEL-0511",
+                    "FIR-2026-RJ-0910",
+                    "FIR-2026-RJ-0781"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "##AN",
+                "type": "ORGANIZATION",
+                "label": "##AN",
+                "case_ids": [
+                    "FIR-2026-DEL-0511",
+                    "FIR-2026-HR-0622"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "Hawala",
+                "type": "MISC",
+                "label": "Hawala",
+                "case_ids": [
+                    "FIR-2026-DEL-0511"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "Sal",
+                "type": "PERSON",
+                "label": "Sal",
+                "case_ids": [
+                    "FIR-2026-DEL-0511"
+                ],
+                "pageRank": 0.05,
+                "betweenness": 15
+            }
+        },
+        {
+            "data": {
+                "id": "##im",
+                "type": "PERSON",
+                "label": "##im",
+                "case_ids": [
+                    "FIR-2026-DEL-0511"
+                ],
+                "pageRank": 0.05,
+                "betweenness": 15
+            }
+        },
+        {
+            "data": {
+                "id": "##sh Sharma",
+                "type": "PERSON",
+                "label": "##sh Sharma",
+                "case_ids": [
+                    "FIR-2026-DEL-0511"
+                ],
+                "pageRank": 0.05,
+                "betweenness": 15
+            }
+        },
+        {
+            "data": {
+                "id": "Salim",
+                "type": "PERSON",
+                "label": "Salim",
+                "case_ids": [
+                    "FIR-2026-DEL-0511"
+                ],
+                "pageRank": 0.05,
+                "betweenness": 15
+            }
+        },
+        {
+            "data": {
+                "id": "FIR-2026-DEL-1011",
+                "type": "CASE",
+                "label": "FIR-2026-DEL-1011",
+                "case_ids": [
+                    "FIR-2026-DEL-1011"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "Con",
+                "type": "LOCATION",
+                "label": "Con",
+                "case_ids": [
+                    "FIR-2026-DEL-1011"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "Place",
+                "type": "LOCATION",
+                "label": "Place",
+                "case_ids": [
+                    "FIR-2026-DEL-1011"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "Chhatarpur",
+                "type": "LOCATION",
+                "label": "Chhatarpur",
+                "case_ids": [
+                    "FIR-2026-DEL-1011",
+                    "FIR-2026-DEL-1250"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "##ud",
+                "type": "PERSON",
+                "label": "##ud",
+                "case_ids": [
+                    "FIR-2026-DEL-1011",
+                    "FIR-2026-DEL-1102",
+                    "FIR-2026-DEL-1250",
+                    "FIR-2026-DEL-0405",
+                    "FIR-2024-DEL-0999"
+                ],
+                "pageRank": 0.25,
+                "betweenness": 75
+            }
+        },
+        {
+            "data": {
+                "id": "##ra P",
+                "type": "PERSON",
+                "label": "##ra P",
+                "case_ids": [
+                    "FIR-2026-DEL-1011",
+                    "FIR-2026-DEL-1102",
+                    "FIR-2026-DEL-1250",
+                    "FIR-2026-DEL-0405"
+                ],
+                "pageRank": 0.2,
+                "betweenness": 60
+            }
+        },
+        {
+            "data": {
+                "id": "##it Gurjar",
+                "type": "PERSON",
+                "label": "##it Gurjar",
+                "case_ids": [
+                    "FIR-2026-DEL-1011",
+                    "FIR-2025-DEL-0042",
+                    "FIR-2026-DEL-0405"
+                ],
+                "pageRank": 0.2,
+                "betweenness": 60
+            }
+        },
+        {
+            "data": {
+                "id": "##ra",
+                "type": "PERSON",
+                "label": "##ra",
+                "case_ids": [
+                    "FIR-2026-DEL-1011"
+                ],
+                "pageRank": 0.05,
+                "betweenness": 15
+            }
+        },
+        {
+            "data": {
+                "id": "FIR-2026-RJ-0910",
+                "type": "CASE",
+                "label": "FIR-2026-RJ-0910",
+                "case_ids": [
+                    "FIR-2026-RJ-0910"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "##J",
+                "type": "ORGANIZATION",
+                "label": "##J",
+                "case_ids": [
+                    "FIR-2026-RJ-0910",
+                    "FIR-2026-HR-0622",
+                    "FIR-2026-DEL-0214"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "##AS",
+                "type": "LOCATION",
+                "label": "##AS",
+                "case_ids": [
+                    "FIR-2026-RJ-0910"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "##TH",
+                "type": "MISC",
+                "label": "##TH",
+                "case_ids": [
+                    "FIR-2026-RJ-0910",
+                    "FIR-2026-RJ-0332"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "IPC",
+                "type": "ORGANIZATION",
+                "label": "IPC",
+                "case_ids": [
+                    "FIR-2026-RJ-0910",
+                    "FIR-2026-HR-0622"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "##daipur",
+                "type": "LOCATION",
+                "label": "##daipur",
+                "case_ids": [
+                    "FIR-2026-RJ-0910"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "Aravalli",
+                "type": "LOCATION",
+                "label": "Aravalli",
+                "case_ids": [
+                    "FIR-2026-RJ-0910"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "FIR-2026-HR-0622",
+                "type": "CASE",
+                "label": "FIR-2026-HR-0622",
+                "case_ids": [
+                    "FIR-2026-HR-0622"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "HAR",
+                "type": "LOCATION",
+                "label": "HAR",
+                "case_ids": [
+                    "FIR-2026-HR-0622",
+                    "FIR-2025-HR-0891"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "##O",
+                "type": "LOCATION",
+                "label": "##O",
+                "case_ids": [
+                    "FIR-2026-HR-0622"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "YAD",
+                "type": "ORGANIZATION",
+                "label": "YAD",
+                "case_ids": [
+                    "FIR-2026-HR-0622"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "FIR-2026-RJ-0781",
+                "type": "CASE",
+                "label": "FIR-2026-RJ-0781",
+                "case_ids": [
+                    "FIR-2026-RJ-0781"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "RAJASTH",
+                "type": "MISC",
+                "label": "RAJASTH",
+                "case_ids": [
+                    "FIR-2026-RJ-0781"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "DSP",
+                "type": "ORGANIZATION",
+                "label": "DSP",
+                "case_ids": [
+                    "FIR-2026-RJ-0781"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "NDP",
+                "type": "ORGANIZATION",
+                "label": "NDP",
+                "case_ids": [
+                    "FIR-2026-RJ-0781"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "##kes",
+                "type": "PERSON",
+                "label": "##kes",
+                "case_ids": [
+                    "FIR-2026-RJ-0781"
+                ],
+                "pageRank": 0.05,
+                "betweenness": 15
+            }
+        },
+        {
+            "data": {
+                "id": "##h",
+                "type": "PERSON",
+                "label": "##h",
+                "case_ids": [
+                    "FIR-2026-RJ-0781"
+                ],
+                "pageRank": 0.05,
+                "betweenness": 15
+            }
+        },
+        {
+            "data": {
+                "id": "##N",
+                "type": "ORGANIZATION",
+                "label": "##N",
+                "case_ids": [
+                    "FIR-2026-RJ-0781"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "Global Logistics",
+                "type": "ORGANIZATION",
+                "label": "Global Logistics",
+                "case_ids": [
+                    "FIR-2026-RJ-0781",
+                    "FIR-2026-DEL-1102",
+                    "FIR-2026-DEL-0214",
+                    "FIR-2026-DEL-1250"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "FIR-2026-DEL-1102",
+                "type": "CASE",
+                "label": "FIR-2026-DEL-1102",
+                "case_ids": [
+                    "FIR-2026-DEL-1102"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "9876543210",
+                "type": "PHONE",
+                "label": "9876543210",
+                "case_ids": [
+                    "FIR-2026-DEL-1102",
+                    "FIR-2026-BLR-404",
+                    "FIR-2025-DEL-0042",
+                    "FIR-2025-HR-0891"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "##KRA",
+                "type": "ORGANIZATION",
+                "label": "##KRA",
+                "case_ids": [
+                    "FIR-2026-DEL-1102",
+                    "uplad1",
+                    "upload1"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "PMLA",
+                "type": "ORGANIZATION",
+                "label": "PMLA",
+                "case_ids": [
+                    "FIR-2026-DEL-1102"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "##ika",
+                "type": "PERSON",
+                "label": "##ika",
+                "case_ids": [
+                    "FIR-2026-DEL-1102",
+                    "FIR-2026-DEL-0214",
+                    "FIR-2026-MUM-901"
+                ],
+                "pageRank": 0.2,
+                "betweenness": 60
+            }
+        },
+        {
+            "data": {
+                "id": "##s Sharma",
+                "type": "PERSON",
+                "label": "##s Sharma",
+                "case_ids": [
+                    "FIR-2026-DEL-1102",
+                    "FIR-2026-DEL-0214",
+                    "FIR-2026-MUM-901"
+                ],
+                "pageRank": 0.2,
+                "betweenness": 60
+            }
+        },
+        {
+            "data": {
+                "id": "Sharma",
+                "type": "PERSON",
+                "label": "Sharma",
+                "case_ids": [
+                    "FIR-2026-DEL-1102"
+                ],
+                "pageRank": 0.05,
+                "betweenness": 15
+            }
+        },
+        {
+            "data": {
+                "id": "FIR-2026-BLR-404",
+                "type": "CASE",
+                "label": "FIR-2026-BLR-404",
+                "case_ids": [
+                    "FIR-2026-BLR-404"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "Bengaluru",
+                "type": "LOCATION",
+                "label": "Bengaluru",
+                "case_ids": [
+                    "FIR-2026-BLR-404"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "Karnataka",
+                "type": "LOCATION",
+                "label": "Karnataka",
+                "case_ids": [
+                    "FIR-2026-BLR-404"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "Gow",
+                "type": "PERSON",
+                "label": "Gow",
+                "case_ids": [
+                    "FIR-2026-BLR-404"
+                ],
+                "pageRank": 0.05,
+                "betweenness": 15
+            }
+        },
+        {
+            "data": {
+                "id": "Koramangala",
+                "type": "LOCATION",
+                "label": "Koramangala",
+                "case_ids": [
+                    "FIR-2026-BLR-404"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "Karth",
+                "type": "PERSON",
+                "label": "Karth",
+                "case_ids": [
+                    "FIR-2026-BLR-404"
+                ],
+                "pageRank": 0.05,
+                "betweenness": 15
+            }
+        },
+        {
+            "data": {
+                "id": "##ik Reddy",
+                "type": "PERSON",
+                "label": "##ik Reddy",
+                "case_ids": [
+                    "FIR-2026-BLR-404"
+                ],
+                "pageRank": 0.05,
+                "betweenness": 15
+            }
+        },
+        {
+            "data": {
+                "id": "FIR-2026-DEL-0214",
+                "type": "CASE",
+                "label": "FIR-2026-DEL-0214",
+                "case_ids": [
+                    "FIR-2026-DEL-0214"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "##UM",
+                "type": "ORGANIZATION",
+                "label": "##UM",
+                "case_ids": [
+                    "FIR-2026-DEL-0214"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "Vika",
+                "type": "PERSON",
+                "label": "Vika",
+                "case_ids": [
+                    "FIR-2026-DEL-0214"
+                ],
+                "pageRank": 0.05,
+                "betweenness": 15
+            }
+        },
+        {
+            "data": {
+                "id": "Laxmi Nagar",
+                "type": "LOCATION",
+                "label": "Laxmi Nagar",
+                "case_ids": [
+                    "FIR-2026-DEL-0214"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "FIR-2025-HR-0442",
+                "type": "CASE",
+                "label": "FIR-2025-HR-0442",
+                "case_ids": [
+                    "FIR-2025-HR-0442"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "##AR",
+                "type": "LOCATION",
+                "label": "##AR",
+                "case_ids": [
+                    "FIR-2025-HR-0442"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "##YAN",
+                "type": "ORGANIZATION",
+                "label": "##YAN",
+                "case_ids": [
+                    "FIR-2025-HR-0442",
+                    "FIR-2025-HR-0891"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "Sector 17",
+                "type": "LOCATION",
+                "label": "Sector 17",
+                "case_ids": [
+                    "FIR-2025-HR-0442"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "FIR-2026-CHE-777",
+                "type": "CASE",
+                "label": "FIR-2026-CHE-777",
+                "case_ids": [
+                    "FIR-2026-CHE-777"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "Chennai",
+                "type": "LOCATION",
+                "label": "Chennai",
+                "case_ids": [
+                    "FIR-2026-CHE-777"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "Tamil Nadu",
+                "type": "LOCATION",
+                "label": "Tamil Nadu",
+                "case_ids": [
+                    "FIR-2026-CHE-777"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "##ghavan",
+                "type": "PERSON",
+                "label": "##ghavan",
+                "case_ids": [
+                    "FIR-2026-CHE-777"
+                ],
+                "pageRank": 0.05,
+                "betweenness": 15
+            }
+        },
+        {
+            "data": {
+                "id": "Ram",
+                "type": "PERSON",
+                "label": "Ram",
+                "case_ids": [
+                    "FIR-2026-CHE-777"
+                ],
+                "pageRank": 0.05,
+                "betweenness": 15
+            }
+        },
+        {
+            "data": {
+                "id": "##esh",
+                "type": "PERSON",
+                "label": "##esh",
+                "case_ids": [
+                    "FIR-2026-CHE-777"
+                ],
+                "pageRank": 0.05,
+                "betweenness": 15
+            }
+        },
+        {
+            "data": {
+                "id": "Ramesh",
+                "type": "PERSON",
+                "label": "Ramesh",
+                "case_ids": [
+                    "FIR-2026-CHE-777"
+                ],
+                "pageRank": 0.05,
+                "betweenness": 15
+            }
+        },
+        {
+            "data": {
+                "id": "uplad1",
+                "type": "CASE",
+                "label": "uplad1",
+                "case_ids": [
+                    "uplad1"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "Hauz Khas",
+                "type": "LOCATION",
+                "label": "Hauz Khas",
+                "case_ids": [
+                    "uplad1",
+                    "upload1"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "##v V",
+                "type": "PERSON",
+                "label": "##v V",
+                "case_ids": [
+                    "uplad1",
+                    "upload1"
+                ],
+                "pageRank": 0.1,
+                "betweenness": 30
+            }
+        },
+        {
+            "data": {
+                "id": "FIR-2026-RJ-0332",
+                "type": "CASE",
+                "label": "FIR-2026-RJ-0332",
+                "case_ids": [
+                    "FIR-2026-RJ-0332"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "##JAS",
+                "type": "ORGANIZATION",
+                "label": "##JAS",
+                "case_ids": [
+                    "FIR-2026-RJ-0332"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "Haryana",
+                "type": "LOCATION",
+                "label": "Haryana",
+                "case_ids": [
+                    "FIR-2026-RJ-0332"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "FIR-2025-DEL-0042",
+                "type": "CASE",
+                "label": "FIR-2025-DEL-0042",
+                "case_ids": [
+                    "FIR-2025-DEL-0042"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "9988776655",
+                "type": "PHONE",
+                "label": "9988776655",
+                "case_ids": [
+                    "FIR-2025-DEL-0042"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "Gurjar",
+                "type": "PERSON",
+                "label": "Gurjar",
+                "case_ids": [
+                    "FIR-2025-DEL-0042",
+                    "FIR-2026-DEL-0405"
+                ],
+                "pageRank": 0.1,
+                "betweenness": 30
+            }
+        },
+        {
+            "data": {
+                "id": "FIR-2026-DEL-1250",
+                "type": "CASE",
+                "label": "FIR-2026-DEL-1250",
+                "case_ids": [
+                    "FIR-2026-DEL-1250"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "MCOCA",
+                "type": "ORGANIZATION",
+                "label": "MCOCA",
+                "case_ids": [
+                    "FIR-2026-DEL-1250"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "Master Information Report",
+                "type": "MISC",
+                "label": "Master Information Report",
+                "case_ids": [
+                    "FIR-2026-DEL-1250"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "upload1",
+                "type": "CASE",
+                "label": "upload1",
+                "case_ids": [
+                    "upload1"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "FIR-2026-MUM-901",
+                "type": "CASE",
+                "label": "FIR-2026-MUM-901",
+                "case_ids": [
+                    "FIR-2026-MUM-901"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "HDFC0001234",
+                "type": "BANK_ACCOUNT",
+                "label": "HDFC0001234",
+                "case_ids": [
+                    "FIR-2026-MUM-901"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "Mumbai",
+                "type": "LOCATION",
+                "label": "Mumbai",
+                "case_ids": [
+                    "FIR-2026-MUM-901"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "Maharashtra",
+                "type": "LOCATION",
+                "label": "Maharashtra",
+                "case_ids": [
+                    "FIR-2026-MUM-901"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "ACP Deshmukh",
+                "type": "ORGANIZATION",
+                "label": "ACP Deshmukh",
+                "case_ids": [
+                    "FIR-2026-MUM-901"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "Andheri",
+                "type": "LOCATION",
+                "label": "Andheri",
+                "case_ids": [
+                    "FIR-2026-MUM-901"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "FIR-2026-DEL-0405",
+                "type": "CASE",
+                "label": "FIR-2026-DEL-0405",
+                "case_ids": [
+                    "FIR-2026-DEL-0405"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "##p",
+                "type": "PERSON",
+                "label": "##p",
+                "case_ids": [
+                    "FIR-2026-DEL-0405"
+                ],
+                "pageRank": 0.05,
+                "betweenness": 15
+            }
+        },
+        {
+            "data": {
+                "id": "##rata",
+                "type": "PERSON",
+                "label": "##rata",
+                "case_ids": [
+                    "FIR-2026-DEL-0405"
+                ],
+                "pageRank": 0.05,
+                "betweenness": 15
+            }
+        },
+        {
+            "data": {
+                "id": "FIR-2025-HR-0891",
+                "type": "CASE",
+                "label": "FIR-2025-HR-0891",
+                "case_ids": [
+                    "FIR-2025-HR-0891"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "8877665544",
+                "type": "PHONE",
+                "label": "8877665544",
+                "case_ids": [
+                    "FIR-2025-HR-0891"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "##oh",
+                "type": "PERSON",
+                "label": "##oh",
+                "case_ids": [
+                    "FIR-2025-HR-0891"
+                ],
+                "pageRank": 0.1,
+                "betweenness": 30
+            }
+        },
+        {
+            "data": {
+                "id": "##it Bhai",
+                "type": "PERSON",
+                "label": "##it Bhai",
+                "case_ids": [
+                    "FIR-2025-HR-0891"
+                ],
+                "pageRank": 0.05,
+                "betweenness": 15
+            }
+        },
+        {
+            "data": {
+                "id": "Gurugram",
+                "type": "LOCATION",
+                "label": "Gurugram",
+                "case_ids": [
+                    "FIR-2025-HR-0891"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "##it",
+                "type": "PERSON",
+                "label": "##it",
+                "case_ids": [
+                    "FIR-2025-HR-0891"
+                ],
+                "pageRank": 0.1,
+                "betweenness": 30
+            }
+        },
+        {
+            "data": {
+                "id": "FIR-2024-DEL-0999",
+                "type": "CASE",
+                "label": "FIR-2024-DEL-0999",
+                "case_ids": [
+                    "FIR-2024-DEL-0999"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "##SP",
+                "type": "LOCATION",
+                "label": "##SP",
+                "case_ids": [
+                    "FIR-2024-DEL-0999"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "Economic Offenses Wing",
+                "type": "ORGANIZATION",
+                "label": "Economic Offenses Wing",
+                "case_ids": [
+                    "FIR-2024-DEL-0999"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "Apex Traders",
+                "type": "ORGANIZATION",
+                "label": "Apex Traders",
+                "case_ids": [
+                    "FIR-2024-DEL-0999"
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "##ra Pratap",
+                "type": "PERSON",
+                "label": "##ra Pratap",
+                "case_ids": [
+                    "FIR-2024-DEL-0999"
+                ],
+                "pageRank": 0.05,
+                "betweenness": 15
+            }
+        }
+    ],
+    "edges": [
+        {
+            "data": {
+                "source": "9811023451",
+                "target": "FIR-2026-DEL-0101",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "DL04CC8891",
+                "target": "FIR-2026-DEL-0101",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "VIKRA",
+                "target": "FIR-2026-DEL-0101",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##uz Khas",
+                "target": "FIR-2026-DEL-0101",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Cha",
+                "target": "FIR-2026-DEL-0101",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##ran Hari",
+                "target": "FIR-2026-DEL-0101",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "State Bank of India",
+                "target": "FIR-2026-DEL-0101",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Delhi",
+                "target": "FIR-2026-DEL-0101",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "9999888877",
+                "target": "FIR-2026-DEL-0511",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##AN",
+                "target": "FIR-2026-DEL-0511",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Hawala",
+                "target": "FIR-2026-DEL-0511",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Sal",
+                "target": "FIR-2026-DEL-0511",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##im",
+                "target": "FIR-2026-DEL-0511",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##sh Sharma",
+                "target": "FIR-2026-DEL-0511",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Salim",
+                "target": "FIR-2026-DEL-0511",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Con",
+                "target": "FIR-2026-DEL-1011",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Place",
+                "target": "FIR-2026-DEL-1011",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Chhatarpur",
+                "target": "FIR-2026-DEL-1011",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##ud",
+                "target": "FIR-2026-DEL-1011",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##ra P",
+                "target": "FIR-2026-DEL-1011",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##it Gurjar",
+                "target": "FIR-2026-DEL-1011",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Cha",
+                "target": "FIR-2026-DEL-1011",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##ran Hari",
+                "target": "FIR-2026-DEL-1011",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "State Bank of India",
+                "target": "FIR-2026-DEL-1011",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##ra",
+                "target": "FIR-2026-DEL-1011",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##it Gurjar",
+                "target": "Cha",
+                "type": "CO_ACCUSED",
+                "explanation": "Extracted by NLP pipeline"
+            }
+        },
+        {
+            "data": {
+                "source": "9999888877",
+                "target": "FIR-2026-RJ-0910",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##J",
+                "target": "FIR-2026-RJ-0910",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##AS",
+                "target": "FIR-2026-RJ-0910",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##TH",
+                "target": "FIR-2026-RJ-0910",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "IPC",
+                "target": "FIR-2026-RJ-0910",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##daipur",
+                "target": "FIR-2026-RJ-0910",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Aravalli",
+                "target": "FIR-2026-RJ-0910",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "9811023451",
+                "target": "FIR-2026-HR-0622",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "DL04CC8891",
+                "target": "FIR-2026-HR-0622",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "HAR",
+                "target": "FIR-2026-HR-0622",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##AN",
+                "target": "FIR-2026-HR-0622",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##O",
+                "target": "FIR-2026-HR-0622",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##J",
+                "target": "FIR-2026-HR-0622",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "YAD",
+                "target": "FIR-2026-HR-0622",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "IPC",
+                "target": "FIR-2026-HR-0622",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "9999888877",
+                "target": "FIR-2026-RJ-0781",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "RAJASTH",
+                "target": "FIR-2026-RJ-0781",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "DSP",
+                "target": "FIR-2026-RJ-0781",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "NDP",
+                "target": "FIR-2026-RJ-0781",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##kes",
+                "target": "FIR-2026-RJ-0781",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##h",
+                "target": "FIR-2026-RJ-0781",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##N",
+                "target": "FIR-2026-RJ-0781",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Global Logistics",
+                "target": "FIR-2026-RJ-0781",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Delhi",
+                "target": "FIR-2026-RJ-0781",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "9876543210",
+                "target": "FIR-2026-DEL-1102",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##KRA",
+                "target": "FIR-2026-DEL-1102",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "PMLA",
+                "target": "FIR-2026-DEL-1102",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Global Logistics",
+                "target": "FIR-2026-DEL-1102",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##ika",
+                "target": "FIR-2026-DEL-1102",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##s Sharma",
+                "target": "FIR-2026-DEL-1102",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##ud",
+                "target": "FIR-2026-DEL-1102",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##ra P",
+                "target": "FIR-2026-DEL-1102",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Sharma",
+                "target": "FIR-2026-DEL-1102",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "9876543210",
+                "target": "FIR-2026-BLR-404",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Bengaluru",
+                "target": "FIR-2026-BLR-404",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Karnataka",
+                "target": "FIR-2026-BLR-404",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Gow",
+                "target": "FIR-2026-BLR-404",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Koramangala",
+                "target": "FIR-2026-BLR-404",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Karth",
+                "target": "FIR-2026-BLR-404",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##ik Reddy",
+                "target": "FIR-2026-BLR-404",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##J",
+                "target": "FIR-2026-DEL-0214",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##UM",
+                "target": "FIR-2026-DEL-0214",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##ika",
+                "target": "FIR-2026-DEL-0214",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##s Sharma",
+                "target": "FIR-2026-DEL-0214",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Global Logistics",
+                "target": "FIR-2026-DEL-0214",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Vika",
+                "target": "FIR-2026-DEL-0214",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Laxmi Nagar",
+                "target": "FIR-2026-DEL-0214",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "DL04CC8891",
+                "target": "FIR-2025-HR-0442",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##AR",
+                "target": "FIR-2025-HR-0442",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##YAN",
+                "target": "FIR-2025-HR-0442",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Sector 17",
+                "target": "FIR-2025-HR-0442",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Cha",
+                "target": "FIR-2025-HR-0442",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##ran Hari",
+                "target": "FIR-2025-HR-0442",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Cha",
+                "target": "##ran Hari",
+                "type": "TRANSACTED_TO",
+                "explanation": "Extracted by NLP pipeline"
+            }
+        },
+        {
+            "data": {
+                "source": "Chennai",
+                "target": "FIR-2026-CHE-777",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Tamil Nadu",
+                "target": "FIR-2026-CHE-777",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##ghavan",
+                "target": "FIR-2026-CHE-777",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Ram",
+                "target": "FIR-2026-CHE-777",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##esh",
+                "target": "FIR-2026-CHE-777",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Ramesh",
+                "target": "FIR-2026-CHE-777",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Cha",
+                "target": "FIR-2026-CHE-777",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##ran Hari",
+                "target": "FIR-2026-CHE-777",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "9811023451",
+                "target": "uplad1",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "DL04CC8891",
+                "target": "uplad1",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##KRA",
+                "target": "uplad1",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Hauz Khas",
+                "target": "uplad1",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Cha",
+                "target": "uplad1",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##ran Hari",
+                "target": "uplad1",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##v V",
+                "target": "uplad1",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "State Bank of India",
+                "target": "uplad1",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Delhi",
+                "target": "uplad1",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Cha",
+                "target": "##ran Hari",
+                "type": "CO_ACCUSED",
+                "explanation": "Extracted by NLP pipeline"
+            }
+        },
+        {
+            "data": {
+                "source": "##JAS",
+                "target": "FIR-2026-RJ-0332",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##TH",
+                "target": "FIR-2026-RJ-0332",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "State Bank of India",
+                "target": "FIR-2026-RJ-0332",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Haryana",
+                "target": "FIR-2026-RJ-0332",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "9876543210",
+                "target": "FIR-2025-DEL-0042",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "9988776655",
+                "target": "FIR-2025-DEL-0042",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##uz Khas",
+                "target": "FIR-2025-DEL-0042",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##it Gurjar",
+                "target": "FIR-2025-DEL-0042",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Gurjar",
+                "target": "FIR-2025-DEL-0042",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "MCOCA",
+                "target": "FIR-2026-DEL-1250",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Chhatarpur",
+                "target": "FIR-2026-DEL-1250",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Global Logistics",
+                "target": "FIR-2026-DEL-1250",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Master Information Report",
+                "target": "FIR-2026-DEL-1250",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##ud",
+                "target": "FIR-2026-DEL-1250",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##ra P",
+                "target": "FIR-2026-DEL-1250",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "9811023451",
+                "target": "upload1",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "DL04CC8891",
+                "target": "upload1",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##KRA",
+                "target": "upload1",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Hauz Khas",
+                "target": "upload1",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Cha",
+                "target": "upload1",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##ran Hari",
+                "target": "upload1",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##v V",
+                "target": "upload1",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "State Bank of India",
+                "target": "upload1",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Delhi",
+                "target": "upload1",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "9811023451",
+                "target": "DL04CC8891",
+                "type": "CALLED",
+                "explanation": "Extracted by NLP pipeline"
+            }
+        },
+        {
+            "data": {
+                "source": "HDFC0001234",
+                "target": "FIR-2026-MUM-901",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Mumbai",
+                "target": "FIR-2026-MUM-901",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Maharashtra",
+                "target": "FIR-2026-MUM-901",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "ACP Deshmukh",
+                "target": "FIR-2026-MUM-901",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Andheri",
+                "target": "FIR-2026-MUM-901",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##ika",
+                "target": "FIR-2026-MUM-901",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##s Sharma",
+                "target": "FIR-2026-MUM-901",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##ika",
+                "target": "##s Sharma",
+                "type": "TRANSACTED_TO",
+                "explanation": "Extracted by NLP pipeline"
+            }
+        },
+        {
+            "data": {
+                "source": "##it Gurjar",
+                "target": "FIR-2026-DEL-0405",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Gurjar",
+                "target": "FIR-2026-DEL-0405",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##ud",
+                "target": "FIR-2026-DEL-0405",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##ra P",
+                "target": "FIR-2026-DEL-0405",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##p",
+                "target": "FIR-2026-DEL-0405",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##rata",
+                "target": "FIR-2026-DEL-0405",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "9876543210",
+                "target": "FIR-2025-HR-0891",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "8877665544",
+                "target": "FIR-2025-HR-0891",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "HAR",
+                "target": "FIR-2025-HR-0891",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##YAN",
+                "target": "FIR-2025-HR-0891",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##oh",
+                "target": "FIR-2025-HR-0891",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##it Bhai",
+                "target": "FIR-2025-HR-0891",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Gurugram",
+                "target": "FIR-2025-HR-0891",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##it",
+                "target": "FIR-2025-HR-0891",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##oh",
+                "target": "##it",
+                "type": "CO_ACCUSED",
+                "explanation": "Extracted by NLP pipeline"
+            }
+        },
+        {
+            "data": {
+                "source": "##SP",
+                "target": "FIR-2024-DEL-0999",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Economic Offenses Wing",
+                "target": "FIR-2024-DEL-0999",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "Apex Traders",
+                "target": "FIR-2024-DEL-0999",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##ud",
+                "target": "FIR-2024-DEL-0999",
+                "type": "MENTIONED_IN"
+            }
+        },
+        {
+            "data": {
+                "source": "##ra Pratap",
+                "target": "FIR-2024-DEL-0999",
+                "type": "MENTIONED_IN"
+            }
+        }
+    ]
+}

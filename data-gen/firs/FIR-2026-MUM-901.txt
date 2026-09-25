@@ -1,0 +1,22 @@
+======================================================================
+FIRST INFORMATION REPORT (Under Section 154 Cr.P.C. / BNSS)
+STATE: Maharashtra
+DISTRICT: Mumbai
+POLICE STATION: PS MUMBAI
+FIR NO: FIR-2026-MUM-901
+DATE & TIME: 2026-09-20
+INVESTIGATING OFFICER: ACP Deshmukh
+OFFENSE / SECTIONS: VARIOUS / PENDING
+STATUS: OPEN
+======================================================================
+
+INCIDENT NARRATIVE:
+A massive cyber fraud ring was dismantled in Andheri. The prime suspect, Vikas Sharma, was apprehended operating a fake call center. 
+Forensic accounting reveals that Vikas Sharma transferred extorted funds to a shared syndicate account: HDFC0001234. 
+This suggests a cross-state money laundering operation linked to other active cases.
+
+EVIDENCE RECOVERED / ATTACHED:
+- Digital/Telecom: None
+- Financial: None
+- Physical: None
+======================================================================

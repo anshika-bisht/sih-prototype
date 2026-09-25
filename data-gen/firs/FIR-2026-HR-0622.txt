@@ -1,0 +1,20 @@
+======================================================================
+FIRST INFORMATION REPORT (Under Section 154 Cr.P.C. / BNSS)
+STATE: HARYANA POLICE
+DISTRICT: ROHTAK
+POLICE STATION: CIVIL LINES
+FIR NO: FIR-2026-HR-0622
+DATE & TIME: 2026-08-05 10:15
+INVESTIGATING OFFICER: SI POOJA YADAV
+OFFENSE / SECTIONS: IPC 302 (MURDER)
+STATUS: OPEN
+======================================================================
+
+INCIDENT NARRATIVE:
+A gang-related shootout occurred outside a local dhaba resulting in one fatality. Eyewitnesses could not identify the shooters, who were masked, but confirmed the getaway vehicle was a white sedan, DL04CC8891. Tower dump analysis near the crime scene isolated a suspect number, 9811023451, which left the cell tower area immediately following the gunfire.
+
+EVIDENCE RECOVERED / ATTACHED:
+- Digital/Telecom: Tower dump isolating MSISDN 9811023451
+- Financial: None
+- Physical: Getaway vehicle DL04CC8891
+======================================================================

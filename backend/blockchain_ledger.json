@@ -1,0 +1,182 @@
+{
+    "5786d2b1d9b121b4885ac0c7fcc1eb02ee2171cfeeb404112eceb98a80e4ee1f": {
+        "caseId": "SYSTEM_BASELINE",
+        "timestamp": 1790329370,
+        "sender": "FALLBACK_SYSTEM"
+    },
+    "6e02007dcb738d7fc6cc2e3d3eb55ed8946f7d439637b7c7a7f0ea386a8ad784": {
+        "caseId": "SYSTEM_BASELINE",
+        "timestamp": 1790329370,
+        "sender": "FALLBACK_SYSTEM"
+    },
+    "3cedf64be1e220e31ad903960bdda24a695a537b3332fcbbfff7f311264461a0": {
+        "caseId": "SYSTEM_BASELINE",
+        "timestamp": 1790329370,
+        "sender": "FALLBACK_SYSTEM"
+    },
+    "a5614cba2cedb472bfa6a4947d819d9df5ed66b734903eccd5c223062b04c374": {
+        "caseId": "FIR-2026-DEL-0101",
+        "timestamp": 1790256154,
+        "sender": "FALLBACK_SYSTEM"
+    },
+    "4278f46d26a09ab1f6aa1292fc7aad4f5c36c3db8b9cc98bf66b33cba7bcb5f1": {
+        "caseId": "FIR-2026-DEL-0511",
+        "timestamp": 1790329370,
+        "sender": "FALLBACK_SYSTEM"
+    },
+    "d4b2f4bd7372608a47870e994e95c34b352415dc7568f3096da22826b0fe6419": {
+        "caseId": "FIR-2026-DEL-1011",
+        "timestamp": 1790329370,
+        "sender": "FALLBACK_SYSTEM"
+    },
+    "409d0fae28f5018cbf44f021db017e32a86e1a9b6bcdf035af4cdff55c5b12f7": {
+        "caseId": "FIR-2026-RJ-0910",
+        "timestamp": 1790329370,
+        "sender": "FALLBACK_SYSTEM"
+    },
+    "a7e5d20512573b245b611841a287eb3bc32f1da6c154e717041859dd015670bb": {
+        "caseId": "FIR-2026-HR-0622",
+        "timestamp": 1790193680,
+        "sender": "FALLBACK_SYSTEM"
+    },
+    "25ebe87e443af6fb45af31460103f172068b344b23f786f803694ed0adce169d": {
+        "caseId": "FIR-2026-RJ-0781",
+        "timestamp": 1790193680,
+        "sender": "FALLBACK_SYSTEM"
+    },
+    "f2120b42f6190338858caf854a4387b0c9958cb27767b302484073cf4fe0269f": {
+        "caseId": "FIR-2026-DEL-1102",
+        "timestamp": 1790329370,
+        "sender": "FALLBACK_SYSTEM"
+    },
+    "40b4a4f004a615fa690a8c184a14146b0c8a1420950add8b2475c8c8552d86dc": {
+        "caseId": "FIR-2026-BLR-404",
+        "timestamp": 1790193680,
+        "sender": "FALLBACK_SYSTEM"
+    },
+    "a934a6970c525c5ef8a2aafed2d92005f054c39e75d0969256ace610760b3759": {
+        "caseId": "FIR-2026-DEL-0214",
+        "timestamp": 1790193680,
+        "sender": "FALLBACK_SYSTEM"
+    },
+    "099f0a0312d9a9067d02acb94a6b2ae2eebe89d7c0e2ecbd4d3b69fa2c33dec1": {
+        "caseId": "FIR-2025-HR-0442",
+        "timestamp": 1790329370,
+        "sender": "FALLBACK_SYSTEM"
+    },
+    "b91ba0d822c4fe77136b61a21a5222fa725dd5172de26b6e563fa61b8b63c029": {
+        "caseId": "FIR-2026-CHE-777",
+        "timestamp": 1790193680,
+        "sender": "FALLBACK_SYSTEM"
+    },
+    "09091c892094fcbf711ae987b7bacb8df3083b1596a0d77f069da284e805f33b": {
+        "caseId": "SYSTEM_BASELINE",
+        "timestamp": 1790192601,
+        "sender": "FALLBACK_SYSTEM"
+    },
+    "afdd0bf06d5cb2abe1b027372fa13f9040e42a080aea3a659b8db76ad9f89e98": {
+        "caseId": "FIR-2026-RJ-0332",
+        "timestamp": 1790329370,
+        "sender": "FALLBACK_SYSTEM"
+    },
+    "163bceab1113f913e3d230b11eb08e974bd6e2fdd98d2fc8658f211e0f8e28e6": {
+        "caseId": "FIR-2025-DEL-0042",
+        "timestamp": 1790193680,
+        "sender": "FALLBACK_SYSTEM"
+    },
+    "98e8c42dc3ec62a45b618d98cd16be084ddfcf9c27f75d211f14aa4593b718c3": {
+        "caseId": "FIR-2026-DEL-1250",
+        "timestamp": 1790329370,
+        "sender": "FALLBACK_SYSTEM"
+    },
+    "a8c345a9b8eb2339e5d0258dda2f146ed9cc5fcec1a51c0a22affc4eb7a45368": {
+        "caseId": "FIR-2026-DEL-0101",
+        "timestamp": 1790329370,
+        "sender": "FALLBACK_SYSTEM"
+    },
+    "021edd6ef0d61d38910c130b3cfb094de8cf03f7bd9d30310d830cae05b59899": {
+        "caseId": "FIR-2026-MUM-901",
+        "timestamp": 1790193680,
+        "sender": "FALLBACK_SYSTEM"
+    },
+    "1a44b24d9d53d07516d54f5604b6e49515a4ee7c2f89982ecd1cb1b512930338": {
+        "caseId": "FIR-2026-DEL-0405",
+        "timestamp": 1790193680,
+        "sender": "FALLBACK_SYSTEM"
+    },
+    "a2ea98b7d2e3ad6e4782a4b8517bf4368773d850048081c31bd4c6a762094953": {
+        "caseId": "FIR-2025-HR-0891",
+        "timestamp": 1790193680,
+        "sender": "FALLBACK_SYSTEM"
+    },
+    "f560336fe1ae03e789d6aad3f79a95edb6ee19c05b68d84cd2f377b18cd5972c": {
+        "caseId": "FIR-2024-DEL-0999",
+        "timestamp": 1790329370,
+        "sender": "FALLBACK_SYSTEM"
+    },
+    "fcab198eda22e91d067453819e3db1f2ce43706eb1e95661bdbfc406a05b27f1": {
+        "caseId": "FIR-2026-MUM-901",
+        "timestamp": 1790329370,
+        "sender": "FALLBACK_SYSTEM"
+    },
+    "5fb0dcd6efb0c6986f89ca3b5d7ecc63164e0bfc1780453db251f5dbf02aa43e": {
+        "caseId": "FIR-2026-HR-0622",
+        "timestamp": 1790329370,
+        "sender": "FALLBACK_SYSTEM"
+    },
+    "4bed269f061ef0c7d69910f1b6ece0093179b43ce418281582dda832abd7b9f9": {
+        "caseId": "FIR-2026-RJ-0781",
+        "timestamp": 1790329370,
+        "sender": "FALLBACK_SYSTEM"
+    },
+    "62089b772272945fd74297533a83a9935166dc1efd7d7c3f811b278d6102741d": {
+        "caseId": "FIR-2026-BLR-404",
+        "timestamp": 1790329370,
+        "sender": "FALLBACK_SYSTEM"
+    },
+    "943e0e359ae31b4bc514881439a4a9259887daec6a6a2bb49197eb24c0639f29": {
+        "caseId": "FIR-2026-DEL-0214",
+        "timestamp": 1790329370,
+        "sender": "FALLBACK_SYSTEM"
+    },
+    "3f5af761ed57cf9b7440f1de8b28e0d90a8be55124dc8acc75a6fed966308a3a": {
+        "caseId": "FIR-2026-CHE-777",
+        "timestamp": 1790329370,
+        "sender": "FALLBACK_SYSTEM"
+    },
+    "0fa1bd77dc169f877f8c1d850cfcf4bc90265735dac576a0d34bf341b66e5a43": {
+        "caseId": "FIR-2025-DEL-0042",
+        "timestamp": 1790329370,
+        "sender": "FALLBACK_SYSTEM"
+    },
+    "c2e6d29b1d2774a42e2833265a892ab4553ab0a6a531fd79562ce6e67fe1d3ea": {
+        "caseId": "FIR-2026-DEL-0405",
+        "timestamp": 1790329370,
+        "sender": "FALLBACK_SYSTEM"
+    },
+    "8deca249b0097bd6f9906d66bfbe6a8d27b7c9d404f570aaf55aafc351c0c887": {
+        "caseId": "FIR-2025-HR-0891",
+        "timestamp": 1790329370,
+        "sender": "FALLBACK_SYSTEM"
+    },
+    "89301c0f2bffa06323c0efac446acfd2018fd35aaa391f325071721e3a5a4524": {
+        "caseId": "FIR-2026-DEL-0101",
+        "timestamp": 1790293377,
+        "sender": "FALLBACK_SYSTEM"
+    },
+    "f535a83daf0082ea9a84338847359c8d6f2db23e338a8c0c3d7639df0ed75cf6": {
+        "caseId": "FIR-2025-HR-0442",
+        "timestamp": 1790293378,
+        "sender": "FALLBACK_SYSTEM"
+    },
+    "a4c08bfe35a7421e453f8748512746651c21384a993d6257910fb404d2b75b11": {
+        "caseId": "FIR-2026-CHE-777",
+        "timestamp": 1790293378,
+        "sender": "FALLBACK_SYSTEM"
+    },
+    "1a830a47c3d614b4d4fde65b2a7e842411e0d44dfa96c2a2b343645f7246f71c": {
+        "caseId": "FIR-2026-DEL-0101",
+        "timestamp": 1790298336,
+        "sender": "FALLBACK_SYSTEM"
+    }
+}

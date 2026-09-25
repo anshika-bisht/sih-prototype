@@ -1,0 +1,19 @@
+======================================================================
+FIRST INFORMATION REPORT (Under Section 154 Cr.P.C. / BNSS)
+STATE: DELHI POLICE
+DISTRICT: SOUTH
+POLICE STATION: HAUZ KHAS
+FIR NO: FIR-2026-DEL-0101
+DATE & TIME: 2026-10-14 11:15
+INVESTIGATING OFFICER: INSP. VIKRAM RAO
+OFFENSE / SECTIONS: IPC 420/120B / IT ACT SEC 66D
+======================================================================
+
+INCIDENT NARRATIVE:
+On 2026-10-14, an organized corporate cyber-extortion racket was detected operating out of Hauz Khas. Accused Charan Hari was observed receiving extortion kickbacks and coordinating mule fund routing with associate Gaurav Verma. Intercepted communications verify ransom proceeds were transferred into bank account SBIN00045129987 at State Bank of India. The primary suspect used mobile number 9811023451 to instruct drop-off logistics across Connaught Place, New Delhi. Accused Charan Hari fled the scene driving a black sedan bearing vehicle registration DL04CC8891.
+
+EVIDENCE RECOVERED / ATTACHED:
+- Digital/Telecom: Call logs and interception warrants for MSISDN 9811023451
+- Financial: Debit/Credit statement for SBI Account SBIN00045129987
+- Physical: ANPR photographic capture of vehicle DL04CC8891
+======================================================================

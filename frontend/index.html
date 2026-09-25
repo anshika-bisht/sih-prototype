@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHAKRAVYUH AI - Law Enforcement Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.28.1/cytoscape.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.28.1/cytoscape.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Roboto Mono', 'monospace'],
+                    },
+                    colors: {
+                        slate: {
+                            850: '#151e2e', // Custom dark slate between 800 and 900
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-slate-900 text-slate-200 h-screen overflow-hidden flex flex-col font-sans">
+
+    <!-- Security Gateway Modal -->
+    <div id="security-modal" class="fixed inset-0 bg-slate-900 z-[10000] flex items-center justify-center">
+        <div class="bg-slate-800 p-8 border-2 border-slate-700 w-96 shadow-2xl">
+            <div class="flex items-center justify-center mb-6">
+                <svg class="w-8 h-8 text-blue-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                <h2 class="text-2xl font-bold text-center text-slate-100 tracking-widest uppercase">CHAKRAVYUH</h2>
+            </div>
+            <div class="border-t border-slate-700 mb-6"></div>
+            <div id="login-form">
+                <input type="text" id="username" placeholder="Officer ID"
+                    class="w-full bg-slate-900 border border-slate-700 p-3 mb-4 focus:outline-none focus:border-slate-500 text-slate-200 font-mono text-sm">
+                <input type="password" id="password" placeholder="Passcode"
+                    class="w-full bg-slate-900 border border-slate-700 p-3 mb-6 focus:outline-none focus:border-slate-500 text-slate-200 font-mono text-sm">
+                <button onclick="authenticate()"
+                    class="w-full bg-slate-700 hover:bg-slate-600 border border-slate-600 text-white p-3 font-semibold transition-colors text-sm tracking-wide uppercase">Authenticate</button>
+                <p id="login-error" class="text-red-500 mt-3 text-sm hidden text-center font-mono">ACCESS DENIED.</p>
+            </div>
+            <div id="role-selection" class="hidden mt-4">
+                <h3 class="text-sm font-semibold mb-4 text-slate-400 text-center uppercase tracking-wider">Select
+                    Clearance Level</h3>
+                <button onclick="selectRole('Investigating Officer')"
+                    class="w-full bg-slate-700 hover:bg-slate-600 text-left p-3 mb-2 transition-colors border border-slate-600 font-mono text-sm">01
+                    - Investigating Officer</button>
+                <button onclick="selectRole('FIU Analyst')"
+                    class="w-full bg-slate-700 hover:bg-slate-600 text-left p-3 mb-2 transition-colors border border-slate-600 font-mono text-sm">02
+                    - FIU Analyst</button>
+                <button onclick="selectRole('System Admin')"
+                    class="w-full bg-slate-700 hover:bg-slate-600 text-left p-3 transition-colors border border-slate-600 font-mono text-sm">03
+                    - System Admin</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top-Right Security Toast Alert -->
+    <div id="security-alert-toast" class="fixed top-20 right-6 z-[100] bg-red-950 border border-red-500 rounded shadow-2xl p-4 w-80 hidden flex-col transition-opacity duration-300">
+        <div class="flex items-center space-x-3 mb-2 border-b border-red-900/50 pb-2">
+            <svg class="w-6 h-6 text-red-500 animate-pulse shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+            <h4 class="text-red-500 font-bold text-xs uppercase tracking-widest m-0 leading-tight">Security Alert</h4>
+        </div>
+        <div class="text-[10px] font-mono text-red-200 mb-4 break-all">
+            <span id="security-toast-filename"></span>
+        </div>
+        <button id="security-toast-dismiss" class="w-full bg-red-700 hover:bg-red-600 text-white font-bold uppercase tracking-widest text-[10px] py-2 rounded transition-colors shadow-sm">
+            DISMISS
+        </button>
+    </div>
+
+    <!-- Top Navbar -->
+    <header class="flex justify-between items-center px-6 h-14 bg-slate-900 border-b border-slate-800 shadow-sm z-[9999] relative shrink-0">
+        <div class="flex items-center">
+            <svg class="w-5 h-5 text-blue-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            <span class="font-bold tracking-widest text-lg text-white">CHAKRAVYUH</span>
+            <span class="bg-slate-800 border border-slate-600 text-slate-400 text-[9px] uppercase tracking-wider px-2 py-0.5 rounded-sm ml-3">SECURE PORTAL</span>
+        </div>
+        <div class="flex items-center space-x-4">
+            <span id="active-role" class="font-mono text-xs text-slate-400 border-r border-slate-700 pr-4">ID: UNASSIGNED</span>
+            
+            <!-- Notification Bell -->
+            <div class="relative">
+                <button id="alert-bell-btn" onclick="toggleAlertPanel()" class="text-slate-400 hover:text-white transition-colors relative flex items-center justify-center w-8 h-8 rounded hover:bg-slate-800">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+                    <span id="alert-count-badge" class="absolute top-2 right-2 w-1.5 h-1.5 bg-red-500 rounded-full hidden text-[0px] text-transparent overflow-hidden"></span>
+                </button>
+                
+                <!-- Dropdown Panel -->
+                <div id="alert-dropdown" class="absolute right-0 mt-2 w-72 bg-slate-900 border border-slate-700 shadow-xl rounded-md hidden z-[9999]">
+                    <div class="px-4 py-3 border-b border-slate-700 font-bold text-xs text-slate-200 uppercase tracking-widest bg-slate-800 rounded-t-md flex justify-between items-center">
+                        <span>Integrity Alerts</span>
+                        <button onclick="toggleAlertPanel()" class="text-slate-400 hover:text-white transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        </button>
+                    </div>
+                    <div id="alert-list" class="max-h-64 overflow-y-auto custom-scrollbar">
+                        <div id="alert-empty-state" class="px-4 py-6 text-center text-slate-500 font-mono text-[10px] uppercase tracking-widest">
+                            <svg class="w-6 h-6 mx-auto mb-2 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            All files verified. No alerts.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="logout()" class="border border-slate-700 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs px-4 py-1.5 rounded-sm transition-colors uppercase tracking-wide">Disconnect</button>
+        </div>
+    </header>
+
+    <!-- Tab Navigation -->
+    <nav class="bg-slate-800 border-b border-slate-700 px-6 py-2 flex space-x-2 shrink-0 z-10 shadow-sm">
+        <button id="btn-tab-analysis" data-target="tab-analysis"
+            class="tab-btn active bg-slate-700 text-white border border-slate-600 px-4 py-2 text-xs font-bold uppercase tracking-widest transition-colors">
+            Master Case Directory & Analytics</button>
+        <button id="btn-tab-graph" data-target="tab-graph"
+            class="tab-btn bg-slate-900 text-slate-400 hover:text-white border border-slate-700 hover:border-slate-600 px-4 py-2 text-xs font-bold uppercase tracking-widest transition-colors">
+            Network Intelligence Visualiser</button>
+    </nav>
+
+    <!-- TAB 2: Network Intelligence (Graph Mode) -->
+    <div id="tab-graph" class="tab-content flex-1 overflow-hidden relative flex" style="display:none">
+
+        <!-- LEFT PANE: Case Directory -->
+        <!-- Left Trigger -->
+        <div class="absolute top-0 left-0 h-full w-6 z-40 peer cursor-e-resize"></div>
+        <!-- Left Panel -->
+        <aside class="absolute top-0 left-0 h-full w-80 bg-slate-900 border-r border-slate-700 flex flex-col z-50 transform -translate-x-full transition-transform duration-300 ease-in-out peer-hover:translate-x-0 hover:translate-x-0 shadow-2xl">
+            <div class="p-4 border-b border-slate-700 flex justify-between items-center bg-slate-900">
+                <div class="flex items-center space-x-3">
+                    <svg class="w-4 h-4 text-blue-400 cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    <h2 class="font-semibold text-slate-100 text-sm tracking-widest uppercase">Case Directory</h2>
+                </div>
+            </div>
+            <div class="p-3 border-b border-slate-700">
+                <button onclick="viewAllIntelligence()" ondblclick="deselectAllCases()"
+                    class="w-full bg-slate-800/80 hover:bg-slate-700 text-blue-200 border border-blue-900/50 py-3 rounded flex flex-col items-center justify-center transition-colors shadow-sm">
+                    <div class="flex items-center space-x-2 font-bold text-xs tracking-widest mb-1">
+                        <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                        <span>VIEW ALL INTELLIGENCE</span>
+                    </div>
+                    <span class="text-[10px] text-slate-400 font-mono">Double-click to clear all FIRs</span>
+                </button>
+            </div>
+            <div class="p-2 border-b border-slate-700 flex flex-col gap-2 shrink-0">
+                <input type="text" id="case-directory-search" placeholder="Search Cases..."
+                    class="w-full bg-slate-900 border border-slate-700 text-slate-200 text-xs px-2 py-1.5 focus:outline-none focus:border-blue-500 font-mono placeholder-slate-500 transition-colors">
+                <select id="filter-status" class="bg-slate-800 text-xs border border-slate-700 text-slate-300 w-full p-1 rounded-sm outline-none">
+                    <option value="ALL">All Statuses</option>
+                    <option value="OPEN">Open</option>
+                    <option value="PENDING">Pending</option>
+                    <option value="CLOSED">Closed</option>
+                </select>
+                <select id="filter-officer" class="bg-slate-800 text-xs border border-slate-700 text-slate-300 w-full p-1 rounded-sm outline-none">
+                    <option value="ALL">All Officers</option>
+                </select>
+            </div>
+            <div class="overflow-y-auto flex-1 p-3 custom-scrollbar">
+                <ul id="case-directory-list" class="space-y-2 text-sm text-slate-300 font-mono">
+                    <!-- Populated dynamically with checkboxes -->
+                </ul>
+            </div>
+        </aside>
+
+        <!-- CENTER PANE: Intelligence Canvas (Graph) -->
+        <main class="flex-1 flex flex-col h-full bg-slate-900 relative">
+
+            <!-- Graph Top Control Bar -->
+            <div id="graph-controls"
+                class="bg-slate-800 border-b border-slate-700 p-2 px-4 flex items-center justify-between text-xs z-10 shrink-0 shadow-sm">
+
+                <!-- Entity Toggle -->
+                <div class="flex items-center space-x-4 text-slate-400">
+                    <span class="font-semibold tracking-wider uppercase mr-2 text-slate-500">Entities:</span>
+                    <label
+                        class="flex items-center space-x-1.5 cursor-pointer hover:text-slate-200 transition-colors"><input
+                            type="checkbox" id="filter-persons" checked
+                            class="form-checkbox bg-slate-900 border-slate-600 text-slate-500 focus:ring-0"><span>Persons</span></label>
+                    <label
+                        class="flex items-center space-x-1.5 cursor-pointer hover:text-slate-200 transition-colors"><input
+                            type="checkbox" id="filter-phones" checked
+                            class="form-checkbox bg-slate-900 border-slate-600 text-slate-500 focus:ring-0"><span>Phones</span></label>
+                    <label
+                        class="flex items-center space-x-1.5 cursor-pointer hover:text-slate-200 transition-colors"><input
+                            type="checkbox" id="filter-accounts" checked
+                            class="form-checkbox bg-slate-900 border-slate-600 text-slate-500 focus:ring-0"><span>Accounts</span></label>
+                    <label
+                        class="flex items-center space-x-1.5 cursor-pointer hover:text-slate-200 transition-colors"><input
+                            type="checkbox" id="filter-locations" checked
+                            class="form-checkbox bg-slate-900 border-slate-600 text-slate-500 focus:ring-0"><span>Locations</span></label>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <!-- Universal Search -->
+                    <div id="universal-search-container" class="flex items-center relative">
+                        <input type="text" id="universal-search-input" list="search-suggestions"
+                            placeholder="Search Entity, Phone, Account..."
+                            class="bg-slate-900 border border-slate-600 text-slate-200 text-xs px-3 py-1.5 w-64 focus:outline-none focus:border-blue-500 font-mono placeholder-slate-500">
+                        <datalist id="search-suggestions"></datalist>
+                        <button id="search-reset-btn" class="absolute right-2 text-slate-400 hover:text-white hidden"
+                            title="Clear Search">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- View Depth -->
+                    <div class="flex items-center space-x-2">
+                        <label class="text-slate-500 font-semibold uppercase tracking-wider">Depth:</label>
+                        <select id="view-depth"
+                            class="bg-slate-900 border border-slate-700 p-1 text-slate-300 focus:border-slate-500 focus:outline-none font-mono text-xs">
+                            <option value="all">All Degrees</option>
+                            <option value="1">1st Degree</option>
+                            <option value="2">2nd Degree</option>
+                            <option value="3">3rd Degree</option>
+                        </select>
+                    </div>
+
+                    <div class="text-slate-400 font-mono text-[10px] whitespace-nowrap ml-2">
+                        Speed: <span id="speed-metric" class="text-emerald-400">0</span>ms
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="flex-1 relative bg-[#0b101a]">
+
+                <!-- Search Toast Notification -->
+                <div id="search-toast"
+                    class="absolute top-4 left-1/2 transform -translate-x-1/2 bg-slate-800 border border-slate-600 text-slate-200 text-xs px-4 py-2 font-mono shadow-lg rounded hidden z-20 transition-opacity">
+                    No matching entity found in loaded graph.
+                </div>
+
+                <!-- Cytoscape Container -->
+                <div id="cy" class="absolute inset-0 z-0"></div>
+
+                <!-- Zoom Controls Overlay -->
+                <div
+                    class="absolute top-4 right-4 z-20 flex bg-slate-800 border border-slate-700 shadow-lg rounded overflow-hidden">
+                    <button onclick="cy.zoom(cy.zoom() * 1.25)"
+                        class="w-8 h-8 text-slate-300 hover:text-white hover:bg-slate-700 flex items-center justify-center font-mono font-bold transition-colors">+</button>
+                    <button onclick="cy.fit()"
+                        class="px-3 text-slate-300 hover:text-white hover:bg-slate-700 flex items-center justify-center font-mono text-[10px] uppercase tracking-widest transition-colors border-x border-slate-700">Center</button>
+                    <button onclick="cy.zoom(cy.zoom() * 0.8)"
+                        class="w-8 h-8 text-slate-300 hover:text-white hover:bg-slate-700 flex items-center justify-center font-mono font-bold transition-colors">-</button>
+                </div>
+
+                <!-- Floating Threat Intelligence Legend -->
+                <div
+                    class="absolute bottom-4 left-4 z-20 bg-slate-900/80 backdrop-blur-sm border border-slate-700 shadow-xl p-4 rounded-md pointer-events-none w-64">
+                    <h3
+                        class="text-xs font-bold text-slate-200 tracking-widest uppercase mb-3 border-b border-slate-700 pb-2">
+                        Intelligence Legend</h3>
+
+                    <div class="mb-4">
+                        <h4 class="text-[10px] text-slate-500 font-semibold uppercase tracking-wider mb-2">Entity Threat
+                            Score</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-center text-[10px] font-mono text-slate-300">
+                                <div
+                                    class="w-3 h-3 rounded-full bg-[#4c0519] border border-[#e11d48] shadow-[0_0_12px_rgba(251,113,133,0.5)] mr-3">
+                                </div>
+                                Kingpin (High PageRank)
+                            </li>
+                            <li class="flex items-center text-[10px] font-mono text-slate-300">
+                                <div
+                                    class="w-2.5 h-2.5 rounded-full bg-[#431407] border border-[#f97316] shadow-[0_0_8px_rgba(249,115,22,0.3)] mr-3">
+                                </div>
+                                Broker (High Betweenness)
+                            </li>
+                            <li class="flex items-center text-[10px] font-mono text-slate-300">
+                                <div class="w-2 h-2 rounded-full bg-[#1e293b] border border-[#f59e0b] mr-3"></div>
+                                Standard Entity
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-[10px] text-slate-500 font-semibold uppercase tracking-wider mb-2">Link Modality
+                        </h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-center text-[10px] font-mono text-slate-300">
+                                <div class="w-4 h-[1.5px] bg-[#3b82f6] mr-3"></div>
+                                Co-Accused / FIR
+                            </li>
+                            <li class="flex items-center text-[10px] font-mono text-slate-300">
+                                <div class="w-4 border-t-[1.5px] border-dashed border-[#10b981] mr-3"></div>
+                                Telecom (CDR)
+                            </li>
+                            <li class="flex items-center text-[10px] font-mono text-slate-300">
+                                <div class="w-4 flex items-center mr-3">
+                                    <div class="flex-1 h-[1.5px] bg-[#f59e0b]"></div>
+                                    <div class="w-0 h-0 border-t-[3px] border-t-transparent border-b-[3px] border-b-transparent border-l-[4px] border-l-[#f59e0b]"></div>
+                                </div>
+                                Financial Transfer
+                            </li>
+                            <li class="flex items-center text-[10px] font-mono text-slate-300">
+                                <div class="w-4 border-t-[1.5px] border-dotted border-[#ec4899] mr-3"></div>
+                                AI Predicted (Hidden)
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Overlay UI elements (e.g. Map toggle if needed, kept hidden for now as per dark institutional focus on graph) -->
+                <div id="welcome-state"
+                    class="absolute inset-0 flex items-center justify-center flex-col text-slate-600 z-10 bg-[#0b101a]">
+                    <svg class="w-16 h-16 mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                        </path>
+                    </svg>
+                    <p class="text-xs font-mono tracking-widest uppercase">Select operations from directory to
+                        initialize canvas.</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- RIGHT PANE: Investigator Block -->
+        <!-- Right Trigger -->
+        <div class="absolute top-0 right-0 h-full w-6 z-40 peer cursor-w-resize"></div>
+        <!-- Right Panel -->
+        <aside id="right-pane"
+            class="absolute top-0 right-0 h-full w-96 bg-slate-900 border-l border-slate-700 flex flex-col z-50 transform translate-x-full transition-transform duration-300 ease-in-out peer-hover:translate-x-0 hover:translate-x-0 shadow-[-10px_0_20px_-5px_rgba(0,0,0,0.5)]">
+            <div class="p-4 border-b border-slate-700 flex justify-between items-center bg-slate-800">
+                <h2 class="font-semibold text-slate-200 text-xs tracking-widest uppercase flex items-center">
+                    <svg class="w-4 h-4 mr-2 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                        </path>
+                    </svg>
+                    Investigator Block
+                </h2>
+            </div>
+
+            <div class="flex-1 overflow-y-auto p-5 custom-scrollbar" id="inspector-content">
+                <div class="flex flex-col items-center justify-center h-full text-slate-600 space-y-4">
+                    <p class="text-xs font-mono uppercase tracking-widest text-center">Node telemetry pending.<br>Select
+                        an entity to begin inspection.</p>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- TAB 1: Master Case Directory & Analytics -->
+    <div id="tab-analysis"
+        class="tab-content flex-1 overflow-hidden relative flex-col bg-slate-900 p-8 active-tab flex">
+        <div class="max-w-7xl mx-auto w-full flex flex-col h-full space-y-8 overflow-y-auto custom-scrollbar pr-4">
+
+            <!-- Header -->
+            <div class="flex items-center justify-between border-b border-slate-700 pb-2 mb-2 shrink-0">
+                <div>
+                    <h1 class="text-xl font-bold text-slate-100 tracking-wide flex items-center">
+                        Overview & Case Intelligence
+                    </h1>
+                    <p class="text-xs text-slate-400 mt-1 font-mono">Real-time status of multi-jurisdictional cyber
+                        operations, forensic artifacts, and ledger consensus.</p>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <button onclick="location.reload()"
+                        class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1 text-xs border border-slate-600 rounded flex items-center transition-colors shadow-sm font-bold uppercase tracking-widest">
+                        <svg class="w-3 h-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15">
+                            </path>
+                        </svg>
+                        Refresh Data
+                    </button>
+                </div>
+            </div>
+
+            <!-- 4 Summary Cards -->
+            <div class="grid grid-cols-4 gap-6 shrink-0">
+                <div
+                    class="bg-slate-850 border border-slate-700 p-6 rounded-lg flex flex-col justify-between shadow-sm">
+                    <div
+                        class="flex justify-between items-start text-slate-400 uppercase text-[10px] tracking-widest font-bold">
+                        TOTAL ACTIVE CASES
+                        <div class="w-6 h-6 bg-blue-900/50 text-blue-400 rounded flex items-center justify-center">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="mt-3 flex items-baseline space-x-2">
+                        <span class="text-3xl font-bold text-slate-100" id="stat-cases-top">142</span>
+                        <span class="text-[10px] text-emerald-400 font-mono font-bold">↑ 8.2%</span>
+                    </div>
+                    <div class="text-[9px] text-slate-500 font-mono mt-1">From <span id="stat-cases-hist-top">428</span>
+                        total historical cases</div>
+                </div>
+
+                <div
+                    class="bg-slate-850 border border-slate-700 p-6 rounded-lg flex flex-col justify-between shadow-sm">
+                    <div
+                        class="flex justify-between items-start text-slate-400 uppercase text-[10px] tracking-widest font-bold">
+                        INDEXED ENTITIES
+                        <div class="w-6 h-6 bg-purple-900/50 text-purple-400 rounded flex items-center justify-center">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="mt-3 flex items-baseline space-x-2">
+                        <span class="text-3xl font-bold text-slate-100" id="stat-entities-top">1,842</span>
+                        <span class="text-[10px] text-purple-400 font-mono font-bold">4 Categories</span>
+                    </div>
+                    <div class="text-[9px] text-slate-500 font-mono mt-1">Cross-referenced across departments</div>
+                </div>
+
+                <div
+                    class="bg-slate-850 border border-slate-700 p-6 rounded-lg flex flex-col justify-between shadow-sm">
+                    <div
+                        class="flex justify-between items-start text-slate-400 uppercase text-[10px] tracking-widest font-bold">
+                        VERIFIED PROOFS
+                        <div
+                            class="w-6 h-6 bg-emerald-900/50 text-emerald-400 rounded flex items-center justify-center">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="mt-3 flex items-baseline space-x-2">
+                        <span class="text-3xl font-bold text-slate-100" id="stat-proofs-top">28</span>
+                        <span class="text-[10px] text-emerald-400 font-mono font-bold">100% Valid</span>
+                    </div>
+                    <div class="text-[9px] text-slate-500 font-mono mt-1"><span id="stat-storage-top">6.76 GB</span>
+                        cryptographic evidence</div>
+                </div>
+
+                <div
+                    class="bg-slate-850 border border-slate-700 p-6 rounded-lg flex flex-col justify-between shadow-sm">
+                    <div
+                        class="flex justify-between items-start text-slate-400 uppercase text-[10px] tracking-widest font-bold">
+                        LEDGER HEALTH
+                        <div class="w-6 h-6 bg-amber-900/50 text-amber-400 rounded flex items-center justify-center">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="mt-3 flex items-baseline space-x-2">
+                        <span class="text-3xl font-bold text-slate-100">99.8%</span>
+                        <span class="text-[10px] text-emerald-400 font-mono font-bold">Optimal</span>
+                    </div>
+                    <div class="text-[9px] text-slate-500 font-mono mt-1">Zero-fee federal consensus</div>
+                </div>
+            </div>
+
+            <!-- Dashboard Row 2 (2 Columns) -->
+            <div class="grid grid-cols-2 gap-6 min-h-[30rem] h-auto shrink-0 mb-16">
+                <!-- Case Status -->
+                <div class="bg-slate-850 border border-slate-700 p-6 rounded-lg flex flex-col shadow-sm">
+                    <div class="flex justify-between mb-4 shrink-0">
+                        <div>
+                            <div class="text-[10px] font-bold text-slate-300 uppercase tracking-widest">Case Status
+                                Overview</div>
+                            <div class="text-[9px] text-slate-500 font-mono mt-0.5">Current triage distribution</div>
+                        </div>
+                        <div
+                            class="bg-slate-800 text-[9px] text-slate-400 px-2 py-0.5 rounded font-mono border border-slate-700 self-start shadow-sm">
+                            <span id="stat-cases-hist2">428</span> Cases
+                        </div>
+                    </div>
+                    <div class="flex-1 relative w-full h-full min-h-0">
+                        <canvas id="caseStatusChart"></canvas>
+                    </div>
+                    <div class="grid grid-cols-3 gap-2 mt-4 shrink-0">
+                        <div
+                            class="bg-slate-900 border border-slate-700 rounded p-2 flex flex-col items-center justify-center">
+                            <span class="text-[9px] text-slate-400 font-bold mb-1 uppercase text-center">Open</span>
+                            <span class="text-sm font-bold text-[#6366f1]" id="stat-case-active">0</span>
+                        </div>
+                        <div
+                            class="bg-slate-900 border border-slate-700 rounded p-2 flex flex-col items-center justify-center">
+                            <span class="text-[9px] text-slate-400 font-bold mb-1 uppercase text-center">Pending</span>
+                            <span class="text-sm font-bold text-[#eab308]" id="stat-case-pending">0</span>
+                        </div>
+                        <div
+                            class="bg-slate-900 border border-slate-700 rounded p-2 flex flex-col items-center justify-center">
+                            <span class="text-[9px] text-slate-400 font-bold mb-1 uppercase text-center">Closed / Archived</span>
+                            <span class="text-sm font-bold text-[#10b981]" id="stat-case-closed">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entity Classification -->
+                <div class="bg-slate-850 border border-slate-700 p-6 rounded-lg flex flex-col shadow-sm">
+                    <div class="flex justify-between mb-4 shrink-0">
+                        <div>
+                            <div class="text-[10px] font-bold text-slate-300 uppercase tracking-widest">Entity Network
+                                Classification</div>
+                            <div class="text-[9px] text-slate-500 font-mono mt-0.5">Indexed forensic subjects</div>
+                        </div>
+                        <div
+                            class="bg-slate-800 text-[9px] text-slate-400 px-2 py-0.5 rounded font-mono border border-slate-700 self-start shadow-sm">
+                            <span id="stat-entities2">1,842</span> Entities
+                        </div>
+                    </div>
+                    <div class="flex-1 relative w-full h-full min-h-0">
+                        <canvas id="entityDistributionChart"></canvas>
+                    </div>
+                    <div class="grid grid-cols-4 gap-2 mt-4 shrink-0">
+                        <div
+                            class="bg-slate-900 border border-slate-700 rounded p-2 flex flex-col items-center justify-center">
+                            <span class="text-[9px] text-slate-400 font-bold mb-1">Personnel</span>
+                            <span class="text-sm font-bold text-[#8b5cf6]" id="stat-ent-personnel">0</span>
+                        </div>
+                        <div
+                            class="bg-slate-900 border border-slate-700 rounded p-2 flex flex-col items-center justify-center">
+                            <span class="text-[9px] text-slate-400 font-bold mb-1">Finance</span>
+                            <span class="text-sm font-bold text-[#10b981]" id="stat-ent-finance">0</span>
+                        </div>
+                        <div
+                            class="bg-slate-900 border border-slate-700 rounded p-2 flex flex-col items-center justify-center">
+                            <span class="text-[9px] text-slate-400 font-bold mb-1">IP/Assets</span>
+                            <span class="text-sm font-bold text-[#3b82f6]" id="stat-ent-assets">0</span>
+                        </div>
+                        <div
+                            class="bg-slate-900 border border-slate-700 rounded p-2 flex flex-col items-center justify-center">
+                            <span class="text-[9px] text-slate-400 font-bold mb-1">Telecom</span>
+                            <span class="text-sm font-bold text-[#f43f5e]" id="stat-ent-telecom">0</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- End of Analytics Grid -->
+
+            <!-- 02 Evidence Intake & Entity Intelligence Section -->
+            <div class="mt-16 flex flex-col shrink-0">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center space-x-3">
+                        <h1 class="text-xl font-bold text-white tracking-wide">Evidence Intake & Entity Intelligence
+                        </h1>
+                    </div>
+                    <div
+                        class="text-[10px] text-slate-400 font-mono bg-[#0f172a] border border-slate-800 px-3 py-1.5 rounded-lg shadow-sm tracking-wide">
+                        Pipeline: Active (NLP-v3)
+                    </div>
+                </div>
+                <p class="text-xs text-slate-400 mb-6 font-mono tracking-tight">Drag & drop evidence files to
+                    automatically extract cross-referenced forensic entities and map network classifications.</p>
+
+                <div class="flex space-x-10 shrink-0 min-h-[450px]">
+                    <!-- Left Column: Quick Ingest -->
+                    <div class="w-[350px] flex flex-col">
+                        <div
+                            class="bg-[#0b101a] border border-slate-800 p-6 rounded-xl flex flex-col shadow-sm h-full relative">
+                            <div class="flex justify-between items-center mb-6 shrink-0">
+                                <div
+                                    class="flex items-center space-x-2 text-[10px] font-bold text-slate-300 uppercase tracking-widest">
+                                    <div
+                                        class="w-2 h-2 bg-emerald-500 rounded-full shadow-[0_0_8px_rgba(16,185,129,0.8)]">
+                                    </div>
+                                    <span>INGEST FILE</span>
+                                </div>
+                            </div>
+
+                            <div id="upload-zone"
+                                class="flex-1 border border-dashed border-slate-700 bg-slate-900/40 hover:bg-slate-800/60 rounded-xl flex flex-col items-center justify-center cursor-pointer transition-colors relative mb-6 shadow-inner">
+                                <input type="file" id="file-upload-input"
+                                    class="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                                    accept=".txt,.csv,.pdf">
+                                <div
+                                    class="w-12 h-12 bg-[#1e1b4b] text-indigo-400 rounded-2xl flex items-center justify-center mb-4 shadow-sm">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div class="text-xs font-bold text-slate-200 tracking-wide mb-2">Drag & drop evidentiary
+                                    files here</div>
+                                <div class="text-[9px] text-slate-500 font-mono text-center px-4 leading-relaxed">or
+                                    click to browse partition (RAW, PCAP, JSON, PDF, TXT)</div>
+                            </div>
+
+                            <div class="flex flex-col space-y-2 shrink-0">
+                                <div class="text-[10px] text-slate-400 font-mono">Target Case Binding</div>
+                                <input type="text" id="ingest-case-id"
+                                    placeholder="CASE-2024-8841-A — Operation Dark Frost"
+                                    class="bg-[#0f172a] border border-slate-700 text-slate-200 px-4 py-3 rounded-lg focus:outline-none focus:border-indigo-500 font-mono text-[10px] w-full shadow-inner tracking-wide">
+                            </div>
+
+                            <button id="commit-proof-btn"
+                                class="mt-6 bg-[#4f46e5] hover:bg-indigo-500 text-white font-bold tracking-wide px-4 py-3.5 rounded-xl transition-colors shadow-lg disabled:opacity-50 disabled:cursor-not-allowed text-xs flex items-center justify-center w-full shrink-0"
+                                disabled>
+                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                Upload & Commit Proof
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Results Container -->
+                    <div class="flex-1 relative flex flex-col">
+                        <!-- Empty State (Shown by default) -->
+                        <div id="ingest-empty-state"
+                            class="absolute inset-0 bg-[#0b101a] border border-slate-800 rounded-xl flex flex-col items-center justify-center shadow-sm">
+                            <div
+                                class="w-16 h-16 bg-slate-900/50 rounded-2xl flex items-center justify-center mb-4 border border-slate-800/50">
+                                <svg class="w-8 h-8 text-slate-600" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="text-xs font-bold text-slate-500 uppercase tracking-widest">Awaiting Evidence
+                                Payload</div>
+                            <div class="text-[10px] text-slate-600 font-mono mt-2">Parsed intelligence will render here.
+                            </div>
+                        </div>
+
+                        <!-- Results (Hidden by default, flex on data) -->
+                        <div id="ingest-preview-zone" class="hidden flex-1 flex-col space-y-4 relative z-10">
+
+                            <!-- Top Block: Uploaded File Preview & Raw Intercept -->
+                            <div
+                                class="bg-[#0b101a] border border-slate-800 rounded-xl shadow-sm overflow-hidden flex flex-col h-[45%]">
+                                <!-- Header -->
+                                <div
+                                    class="px-5 py-3 border-b border-slate-800/50 flex items-center justify-between bg-[#0f172a] shrink-0">
+                                    <div class="flex items-center space-x-4">
+                                        <div class="bg-[#1e1b4b] p-2.5 rounded-lg text-indigo-400 shadow-inner">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div class="flex flex-col space-y-1">
+                                            <div class="flex items-center space-x-3">
+                                                <h3
+                                                    class="text-[10px] font-bold text-slate-300 uppercase tracking-widest">
+                                                    UPLOADED FILE PREVIEW</h3>
+                                                <span
+                                                    class="bg-emerald-900/30 text-emerald-400 text-[8px] px-2 py-0.5 rounded-full font-mono">Auto-Parsed
+                                                    Successfully</span>
+                                            </div>
+                                            <div class="text-[10px] text-indigo-400 font-mono tracking-wide"><span
+                                                    id="preview-filename">intercept_trace_del.txt</span> <span
+                                                    class="text-slate-600 ml-2">• 42.4 KB • text/plain</span></div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="text-[9px] font-mono text-slate-500 bg-[#1e293b] px-3 py-1.5 rounded-md border border-slate-700 shadow-sm">
+                                        Binding: <span id="preview-binding-label"
+                                            class="text-slate-400">CASE-2024-8841-A</span>
+                                    </div>
+                                </div>
+                                <!-- Raw Intercept Body -->
+                                <div class="p-5 flex-1 flex flex-col min-h-0 bg-slate-900/20">
+                                    <div class="flex justify-between items-center mb-3 shrink-0">
+                                        <div class="text-[9px] font-bold text-slate-500 uppercase tracking-widest">RAW
+                                            INTERCEPT SNIPPET & RECOGNIZED TOKEN STREAM</div>
+                                        <div
+                                            class="text-[9px] font-bold text-emerald-400 uppercase tracking-widest flex items-center">
+                                            <div
+                                                class="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-1.5 shadow-[0_0_5px_rgba(16,185,129,0.5)]">
+                                            </div>
+                                            <span id="entity-count-label">0 ENTITIES EXTRACTED</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-1 overflow-y-auto custom-scrollbar text-slate-400 font-mono text-[10px] leading-relaxed whitespace-pre-wrap tracking-tight bg-slate-900/40 p-4 rounded-lg border border-slate-800 shadow-inner"
+                                        id="ingest-raw-text">
+                                        <!-- Injected Text -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Bottom Block: Extracted Entities -->
+                            <div
+                                class="bg-[#0b101a] border border-slate-800 rounded-xl shadow-sm flex flex-col flex-1 min-h-0">
+                                <div
+                                    class="px-5 py-3 border-b border-slate-800/50 flex justify-between items-center bg-[#0f172a] shrink-0">
+                                    <div
+                                        class="flex items-center space-x-2 text-[10px] font-bold text-slate-300 uppercase tracking-widest">
+                                        <div
+                                            class="w-2 h-2 bg-indigo-500 rounded-full shadow-[0_0_8px_rgba(99,102,241,0.8)]">
+                                        </div>
+                                        <span>EXTRACTED ENTITIES & INTELLIGENCE</span>
+                                    </div>
+                                    <div
+                                        class="text-[9px] font-mono text-indigo-400 bg-indigo-900/20 px-3 py-1.5 rounded-md border border-indigo-900/50">
+                                        Source: <span id="source-filename-label"
+                                            class="text-indigo-300">intercept_trace_del.txt</span>
+                                    </div>
+                                </div>
+                                <div class="p-5 flex-1 overflow-y-auto custom-scrollbar bg-slate-900/20">
+                                    <div id="ingest-entity-summary"
+                                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                                        <!-- Cards injected here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Global Evidence Ledger & Search -->
+                <div class="bg-slate-850 border border-slate-700 rounded-lg flex flex-col mt-6 shadow-sm flex-1 mb-4">
+                    <div
+                        class="p-4 border-b border-slate-700 flex justify-between items-end bg-slate-850 rounded-t-lg shrink-0">
+                        <div>
+                            <h2 class="text-sm font-bold text-slate-200 tracking-wide flex items-center">
+                                Universal Evidence Search
+                            </h2>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="relative">
+                                <svg class="w-3.5 h-3.5 absolute left-3 top-2.5 text-slate-500" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                </svg>
+                                <input type="text" id="simple-search-input"
+                                    onkeyup="if(event.key === 'Enter') performSimpleSearch()"
+                                    placeholder="Search hash, case, or entity name..."
+                                    class="bg-slate-900 border border-slate-700 text-slate-200 pl-9 pr-8 py-2 rounded focus:outline-none focus:border-blue-500 font-mono text-[10px] w-72 shadow-inner placeholder-slate-600 transition-colors">
+                                <div
+                                    class="absolute right-2 top-2 text-[9px] text-slate-500 bg-slate-800 px-1.5 py-0.5 rounded border border-slate-700 font-sans">
+                                    ↵</div>
+                            </div>
+                            <button onclick="performSimpleSearch()"
+                                class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 text-[10px] font-bold uppercase tracking-widest border border-blue-500 rounded flex items-center transition-colors shadow-sm">
+                                <svg class="w-3 h-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                </svg> Search
+                            </button>
+                        </div>
+                    </div>
+
+
+
+                    <div id="ledger-content-area"
+                        class="flex-1 flex flex-col relative overflow-hidden bg-slate-900 rounded-b-lg">
+
+                        <div id="simple-search-results"
+                            class="hidden border-b border-slate-700 p-4 bg-slate-850 shrink-0 shadow-inner overflow-y-auto max-h-64">
+                            <!-- Search results injected here -->
+                        </div>
+
+                        <!-- Placeholder state before search/selection -->
+                        <div id="dossier-empty-state"
+                            class="flex flex-col flex-1 max-h-[55vh] overflow-y-auto border-t border-slate-700 bg-slate-900 rounded-b-lg custom-scrollbar">
+                            <table class="w-full text-left border-collapse">
+                                <thead class="sticky top-0 z-10 bg-slate-850 shadow-md">
+                                    <tr
+                                        class="text-[10px] text-slate-400 uppercase tracking-widest font-mono border-b border-slate-700">
+                                        <th class="py-3 px-4 font-bold">ARTIFACT & BOUND CASE</th>
+                                        <th class="py-3 px-4 font-bold">CASE STATUS & LOG DATE</th>
+                                        <th class="py-3 px-4 font-bold">INVESTIGATOR & STATION</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="global-evidence-table-body" class="text-xs">
+                                    <!-- Populated dynamically via JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Entity Profile Overlay (Hidden by Default) -->
+        <div id="entity-profile-overlay"
+            class="fixed inset-0 z-50 bg-slate-900/95 backdrop-blur-sm hidden flex-col items-center justify-center p-8">
+            <button onclick="document.getElementById('entity-profile-overlay').classList.add('hidden')"
+                class="absolute top-6 right-8 text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 border border-slate-600 px-4 py-2 rounded text-[10px] font-bold uppercase tracking-widest shadow-sm transition-colors z-50">
+                ✕ Close Profile
+            </button>
+
+            <div class="w-full max-w-7xl h-full flex flex-col space-y-4">
+                <!-- Subject Dossier & Intelligence Report -->
+                <div id="subject-dossier-container"
+                    class="flex flex-col flex-1 space-y-4 bg-slate-900 shadow-2xl rounded-lg border border-slate-700 overflow-hidden">
+                    <!-- Task 1: Formal Dossier Header -->
+                    <div class="bg-slate-850 border-b border-slate-700 p-6 flex items-center justify-between shrink-0">
+                        <div>
+                            <div class="flex items-center space-x-4 mb-2">
+                                <h2 class="text-2xl font-bold text-slate-100 uppercase tracking-widest"
+                                    id="dossier-name">SUBJECT NAME</h2>
+                            </div>
+                            <div class="text-xs text-slate-400 font-mono flex items-center space-x-4 flex-wrap gap-y-2">
+                                <span id="dossier-id" class="bg-slate-900 px-2 py-1 border border-slate-700 rounded">ID:
+                                </span>
+                                <span id="dossier-type"
+                                    class="bg-slate-900 px-2 py-1 border border-slate-700 rounded">TYPE: </span>
+                                <span id="dossier-aliases"
+                                    class="bg-slate-900 px-2 py-1 border border-slate-700 rounded">ALIASES: N/A</span>
+                                <span id="dossier-location"
+                                    class="bg-slate-900 px-2 py-1 border border-slate-700 rounded">LOCATION:
+                                    UNKNOWN</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-row justify-end items-center gap-3">
+                            <button onclick="exportDossierPDF()"
+                                class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-600 px-5 py-2.5 text-xs font-bold uppercase tracking-widest transition-colors shadow-sm rounded">
+                                Export PDF Dossier</button>
+                            <button
+                                onclick="viewInNetworkGraph(); document.getElementById('entity-profile-overlay').classList.add('hidden')"
+                                class="bg-blue-600 hover:bg-blue-700 text-white border border-blue-500 px-5 py-2.5 text-xs font-bold uppercase tracking-widest transition-colors shadow-sm rounded">
+                                View in Network Graph</button>
+                            <button
+                                onclick="document.getElementById('entity-profile-overlay').classList.add('hidden')"
+                                class="bg-red-900/30 hover:bg-red-900/50 text-red-400 border border-red-700/50 px-5 py-2.5 text-xs font-bold uppercase tracking-widest transition-colors shadow-sm rounded">
+                                ✕ Close</button>
+                        </div>
+                    </div>
+
+                    <!-- 2-Column Grid -->
+                    <div class="flex flex-1 space-x-6 min-h-0 p-6 pt-2">
+                        <!-- Task 2: Risk Analytics & Activity Report -->
+                        <div class="w-1/3 flex flex-col space-y-6 min-h-0">
+                            <div
+                                class="bg-slate-850 border border-slate-700 p-4 shadow-sm flex flex-col shrink-0 h-64 rounded-lg">
+                                <h3
+                                    class="text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-2 border-b border-slate-700 pb-2">
+                                    Threat Analytics</h3>
+                                <div class="flex-1 relative w-full h-full min-h-0 mt-2">
+                                    <canvas id="dossierRadarChart"></canvas>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-slate-850 border border-slate-700 shadow-sm flex flex-col flex-1 min-h-0 rounded-lg">
+                                <h3
+                                    class="text-[10px] font-semibold text-slate-400 uppercase tracking-widest m-4 mb-2 border-b border-slate-700 pb-2 shrink-0">
+                                    AI Analytical Assessment</h3>
+                                <div id="dossier-ai-assessment"
+                                    class="flex-1 overflow-y-auto p-4 custom-scrollbar text-[11px] font-mono text-slate-300 leading-relaxed space-y-3">
+                                    <!-- Populated dynamically -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Task 3: Evidence Directory with Local Search & Inline Preview -->
+                        <div
+                            class="w-2/3 bg-slate-850 border border-slate-700 shadow-sm flex flex-col min-h-0 rounded-lg">
+                            <div
+                                class="p-4 bg-slate-800 border-b border-slate-700 flex items-center justify-between shrink-0 rounded-t-lg">
+                                <h3
+                                    class="text-[10px] font-semibold text-slate-300 uppercase tracking-widest flex items-center">
+                                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                        </path>
+                                    </svg>
+                                    Evidentiary Proofs
+                                </h3>
+                                <input type="text" id="dossier-evidence-search" onkeyup="filterDossierEvidence()"
+                                    placeholder="Filter associated files..."
+                                    class="bg-slate-900 border border-slate-600 text-slate-200 px-3 py-1.5 focus:outline-none focus:border-blue-500 font-mono text-xs w-64 shadow-sm placeholder-slate-600 rounded">
+                            </div>
+                            <div class="flex-1 flex overflow-hidden rounded-b-lg">
+                                <div class="w-1/3 border-r border-slate-700 overflow-y-auto custom-scrollbar p-3 space-y-2 bg-slate-900/50"
+                                    id="dossier-evidence-list">
+                                    <!-- Populated dynamically -->
+                                </div>
+                                <div class="w-2/3 flex flex-col" id="dossier-evidence-preview">
+                                    <div
+                                        class="flex items-center justify-center h-full text-slate-600 font-mono text-xs uppercase tracking-widest text-center p-4">
+                                        Select an evidentiary file to view details.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success Toast -->
+        <div id="ingest-toast"
+            class="fixed bottom-6 right-6 bg-emerald-600 border border-emerald-400 text-white px-6 py-4 font-mono shadow-lg shadow-emerald-900/50 hidden z-50 transform transition-all duration-300 uppercase tracking-widest">
+            Proof Committed to Ledger & Graph
+        </div>
+
+        <script src="main.js"></script>
+</body>
+
+</html>

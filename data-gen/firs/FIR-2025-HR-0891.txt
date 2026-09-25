@@ -1,0 +1,20 @@
+======================================================================
+FIRST INFORMATION REPORT (Under Section 154 Cr.P.C. / BNSS)
+STATE: HARYANA POLICE
+DISTRICT: GURUGRAM
+POLICE STATION: DLF PHASE 2
+FIR NO: FIR-2025-HR-0891
+DATE & TIME: 2025-07-19 22:15
+INVESTIGATING OFFICER: DSP AMAN SINGH
+OFFENSE / SECTIONS: IPC 384 (EXTORTION)
+STATUS: CLOSED
+======================================================================
+
+INCIDENT NARRATIVE:
+Complainant, a local real estate developer, reported receiving extortion threats from an individual identifying himself as Rohit Bhai. The caller demanded INR 50 Lakhs protection money, instructing the victim to drop the cash at a designated spot in Gurugram. Surveillance footage captured suspect Rohit fleeing the drop location in a vehicle bearing registration HR-26-DK-9988. CDR analysis of the burner phone left at the scene showed incoming instructions from 9876543210.
+
+EVIDENCE RECOVERED / ATTACHED:
+- Digital/Telecom: Burner phone MSISDN 8877665544, connected to 9876543210
+- Financial: None
+- Physical: Vehicle registration HR-26-DK-9988 flagged on CCTV
+======================================================================

@@ -1,0 +1,20 @@
+======================================================================
+FIRST INFORMATION REPORT (Under Section 154 Cr.P.C. / BNSS)
+STATE: DELHI POLICE
+DISTRICT: EAST
+POLICE STATION: LAXMI NAGAR
+FIR NO: FIR-2026-DEL-0214
+DATE & TIME: 2026-02-05 09:00
+INVESTIGATING OFFICER: SI RAJESH KUMAR
+OFFENSE / SECTIONS: IPC 420 / PMLA SEC 3
+STATUS: OPEN
+======================================================================
+
+INCIDENT NARRATIVE:
+Cyber cell flagged suspicious, high-volume transactions originating from multiple shell companies. The primary beneficiary account, HDFC00012345678, is registered under the name of Vikas Sharma, Director of Global Logistics. Bank records indicate rapid funneling of funds to offshore accounts. Suspect Vikas Sharma is currently evading arrest. Address on file is an empty warehouse in Laxmi Nagar.
+
+EVIDENCE RECOVERED / ATTACHED:
+- Digital/Telecom: None
+- Financial: HDFC Account HDFC00012345678, Corporate filings for Global Logistics
+- Physical: None
+======================================================================

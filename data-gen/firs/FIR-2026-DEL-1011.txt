@@ -1,0 +1,20 @@
+======================================================================
+FIRST INFORMATION REPORT (Under Section 154 Cr.P.C. / BNSS)
+STATE: DELHI POLICE
+DISTRICT: SOUTH
+POLICE STATION: CHHATARPUR
+FIR NO: FIR-2026-DEL-1011
+DATE & TIME: 2026-10-18 05:00
+INVESTIGATING OFFICER: ACP SANJAY DUTT
+OFFENSE / SECTIONS: IPC 120B / NDPS ACT
+STATUS: OPEN
+======================================================================
+
+INCIDENT NARRATIVE:
+Following up on the Connaught Place extortion trace, a tactical raid was conducted on a heavily guarded farmhouse in Chhatarpur. The property is legally owned by Rudra Pratap. Inside, police arrested Amit Gurjar and Charan Hari who were destroying financial documents. The shredded documents contained repeated references to State Bank of India account SBIN00045129987. Rudra Pratap was not present.
+
+EVIDENCE RECOVERED / ATTACHED:
+- Digital/Telecom: None
+- Financial: Shredded documents linking to SBIN00045129987
+- Physical: Farmhouse property deed in name of Rudra Pratap
+======================================================================

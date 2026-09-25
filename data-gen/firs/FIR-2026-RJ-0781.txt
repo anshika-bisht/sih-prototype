@@ -1,0 +1,20 @@
+======================================================================
+FIRST INFORMATION REPORT (Under Section 154 Cr.P.C. / BNSS)
+STATE: RAJASTHAN POLICE
+DISTRICT: ALWAR
+POLICE STATION: BHIWADI
+FIR NO: FIR-2026-RJ-0781
+DATE & TIME: 2026-09-01 23:45
+INVESTIGATING OFFICER: DSP RAM SINGH
+OFFENSE / SECTIONS: NDPS ACT SEC 21
+STATUS: OPEN
+======================================================================
+
+INCIDENT NARRATIVE:
+Border checkpoint intercepted a commercial truck carrying synthetic narcotics. The driver, Mukesh, claimed he was hired via a logistics app and didn't know the cargo. Phone forensics revealed he was in constant contact with MSISDN 9999888877 throughout the journey. The cargo was addressed to a warehouse owned by Global Logistics in Delhi.
+
+EVIDENCE RECOVERED / ATTACHED:
+- Digital/Telecom: MSISDN 9999888877
+- Financial: None
+- Physical: Commercial truck, synthetic narcotics
+======================================================================

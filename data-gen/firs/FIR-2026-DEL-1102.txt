@@ -1,0 +1,20 @@
+======================================================================
+FIRST INFORMATION REPORT (Under Section 154 Cr.P.C. / BNSS)
+STATE: DELHI POLICE
+DISTRICT: NORTH
+POLICE STATION: CIVIL LINES
+FIR NO: FIR-2026-DEL-1102
+DATE & TIME: 2026-10-25 10:00
+INVESTIGATING OFFICER: INSP. VIKRAM RAO
+OFFENSE / SECTIONS: PMLA / IPC 120B
+STATUS: OPEN
+======================================================================
+
+INCIDENT NARRATIVE:
+A coordinated sting operation targeted the corporate offices of Global Logistics. Vikas Sharma was finally apprehended on site. His personal ledger cross-referenced the HDFC00012345678 laundering account with direct cash handoffs to a man identified as Rudra Pratap. Sharma's primary communication device, using MSISDN 9876543210, was seized, establishing him as the central dispatcher for extortion and narcotics operations over the past two years.
+
+EVIDENCE RECOVERED / ATTACHED:
+- Digital/Telecom: MSISDN 9876543210 seized
+- Financial: HDFC Account HDFC00012345678, Physical ledgers
+- Physical: Global Logistics corporate assets
+======================================================================

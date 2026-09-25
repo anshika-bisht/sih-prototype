@@ -1,0 +1,20 @@
+======================================================================
+FIRST INFORMATION REPORT (Under Section 154 Cr.P.C. / BNSS)
+STATE: DELHI POLICE
+DISTRICT: SOUTH
+POLICE STATION: HAUZ KHAS
+FIR NO: FIR-2025-DEL-0042
+DATE & TIME: 2025-03-12 14:30
+INVESTIGATING OFFICER: INSP. VIKRAM RAO
+OFFENSE / SECTIONS: NDPS ACT SEC 21 / IPC 120B
+STATUS: CLOSED
+======================================================================
+
+INCIDENT NARRATIVE:
+On 2025-03-12, a tip-off led to the interception of a drug smuggling operation near Hauz Khas village. Suspect Amit Gurjar was apprehended with 500 grams of contraband. The suspect was driving a black SUV with registration DL-9C-1122. During interrogation, Gurjar refused to name his suppliers but digital forensics on his seized mobile device revealed frequent outbound calls to phone number 9876543210 just prior to the delivery.
+
+EVIDENCE RECOVERED / ATTACHED:
+- Digital/Telecom: Call records associated with MSISDN 9988776655 (Suspect), 9876543210 (Unknown)
+- Financial: None
+- Physical: Vehicle registration DL-9C-1122 (Registered to Apex Traders)
+======================================================================

@@ -1,0 +1,20 @@
+======================================================================
+FIRST INFORMATION REPORT (Under Section 154 Cr.P.C. / BNSS)
+STATE: DELHI POLICE
+DISTRICT: CENTRAL
+POLICE STATION: CHANDNI CHOWK
+FIR NO: FIR-2026-DEL-0511
+DATE & TIME: 2026-06-10 13:00
+INVESTIGATING OFFICER: INSP. TARIQ ALI
+OFFENSE / SECTIONS: FEMA / IPC 120B
+STATUS: OPEN
+======================================================================
+
+INCIDENT NARRATIVE:
+A raid on an underground Hawala operation resulted in the arrest of operator Salim. Physical ledgers recovered from the scene detail massive cash-to-digital conversions. The most frequent digital transfers were wired to HDFC00012345678, attributed in the ledger to a "Vikash Sharma". Salim's phone showed he received daily confirmation messages from MSISDN 9999888877.
+
+EVIDENCE RECOVERED / ATTACHED:
+- Digital/Telecom: MSISDN 9999888877 found in Hawala logs
+- Financial: HDFC Account HDFC00012345678
+- Physical: Hawala paper ledgers
+======================================================================
