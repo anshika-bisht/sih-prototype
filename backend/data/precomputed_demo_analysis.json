@@ -270,6 +270,2161 @@
         }
       ],
       "aliases": []
+    },
+    {
+      "case_id": "FIR-2025-HR-0442",
+      "entities": [
+        {
+          "type": "VEHICLE",
+          "value": "DL04CC8891",
+          "start": 598,
+          "end": 608
+        },
+        {
+          "type": "VEHICLE",
+          "value": "DL04CC8891",
+          "start": 940,
+          "end": 950
+        },
+        {
+          "type": "LOCATION",
+          "value": "Sector 17",
+          "start": 482,
+          "end": 491
+        },
+        {
+          "type": "PERSON",
+          "value": "Gaurav Verma",
+          "start": 638,
+          "end": 650,
+          "has_edge": true
+        },
+        {
+          "type": "PERSON",
+          "value": "Charan Hari",
+          "start": 709,
+          "end": 720,
+          "has_edge": true
+        }
+      ],
+      "relationships": [
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Gaurav Verma",
+            "start": 638,
+            "end": 650,
+            "has_edge": true
+          },
+          "target": {
+            "type": "PERSON",
+            "value": "Charan Hari",
+            "start": 709,
+            "end": 720,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"The vehicle was traced to a Gaurav Verma, who claimed he had lent the car to an acquaintance named Charan Hari on the day of the incident.\""
+        },
+        {
+          "source": {
+            "type": "VEHICLE",
+            "value": "DL04CC8891",
+            "start": 598,
+            "end": 608
+          },
+          "target": {
+            "type": "CASE",
+            "value": "FIR-2025-HR-0442"
+          },
+          "type": "MENTIONED_IN"
+        },
+        {
+          "source": {
+            "type": "VEHICLE",
+            "value": "DL04CC8891",
+            "start": 940,
+            "end": 950
+          },
+          "target": {
+            "type": "CASE",
+            "value": "FIR-2025-HR-0442"
+          },
+          "type": "MENTIONED_IN"
+        },
+        {
+          "source": {
+            "type": "LOCATION",
+            "value": "Sector 17",
+            "start": 482,
+            "end": 491
+          },
+          "target": {
+            "type": "CASE",
+            "value": "FIR-2025-HR-0442"
+          },
+          "type": "MENTIONED_IN"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "case_id": "FIR-2025-HR-0891",
+      "entities": [
+        {
+          "type": "PHONE",
+          "value": "9876543210",
+          "start": 904,
+          "end": 914,
+          "has_edge": true
+        },
+        {
+          "type": "PHONE",
+          "value": "8877665544",
+          "start": 987,
+          "end": 997,
+          "has_edge": true
+        },
+        {
+          "type": "PHONE",
+          "value": "9876543210",
+          "start": 1012,
+          "end": 1022,
+          "has_edge": true
+        },
+        {
+          "type": "VEHICLE",
+          "value": "HR26DK9988",
+          "start": 804,
+          "end": 817,
+          "has_edge": true
+        },
+        {
+          "type": "VEHICLE",
+          "value": "HR26DK9988",
+          "start": 1074,
+          "end": 1087,
+          "has_edge": true
+        },
+        {
+          "type": "PERSON",
+          "value": "Complainant",
+          "start": 440,
+          "end": 451,
+          "has_edge": true
+        },
+        {
+          "type": "PERSON",
+          "value": "Rohit Bhai",
+          "start": 563,
+          "end": 573,
+          "has_edge": true
+        },
+        {
+          "type": "LOCATION",
+          "value": "Gurugram",
+          "start": 690,
+          "end": 698,
+          "has_edge": true
+        },
+        {
+          "type": "PERSON",
+          "value": "Rohit",
+          "start": 738,
+          "end": 743,
+          "has_edge": true
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "CDR",
+          "start": 819,
+          "end": 822,
+          "has_edge": true
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "INR",
+          "start": 595,
+          "end": 598,
+          "has_edge": true
+        }
+      ],
+      "relationships": [
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Complainant",
+            "start": 440,
+            "end": 451,
+            "has_edge": true
+          },
+          "target": {
+            "type": "PERSON",
+            "value": "Rohit Bhai",
+            "start": 563,
+            "end": 573,
+            "has_edge": true
+          },
+          "type": "TRANSACTED_TO",
+          "explanation": "\"IPC 384 (EXTORTION)\nSTATUS: CLOSED\n======================================================================\n\nINCIDENT NARRATIVE:\nComplainant, a local real estate developer, reported receiving extortion threats from an individual identifying himself as Rohit Bhai.\""
+        },
+        {
+          "source": {
+            "type": "ORGANIZATION",
+            "value": "INR",
+            "start": 595,
+            "end": 598,
+            "has_edge": true
+          },
+          "target": {
+            "type": "LOCATION",
+            "value": "Gurugram",
+            "start": 690,
+            "end": 698,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"The caller demanded INR 50 Lakhs protection money, instructing the victim to drop the cash at a designated spot in Gurugram.\""
+        },
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Rohit",
+            "start": 738,
+            "end": 743,
+            "has_edge": true
+          },
+          "target": {
+            "type": "VEHICLE",
+            "value": "HR26DK9988",
+            "start": 804,
+            "end": 817,
+            "has_edge": true
+          },
+          "type": "OWNS_VEHICLE",
+          "explanation": "\"Surveillance footage captured suspect Rohit fleeing the drop location in a vehicle bearing registration HR-26-DK-9988.\""
+        },
+        {
+          "source": {
+            "type": "ORGANIZATION",
+            "value": "CDR",
+            "start": 819,
+            "end": 822,
+            "has_edge": true
+          },
+          "target": {
+            "type": "PHONE",
+            "value": "9876543210",
+            "start": 904,
+            "end": 914,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"CDR analysis of the burner phone left at the scene showed incoming instructions from 9876543210.\""
+        },
+        {
+          "source": {
+            "type": "PHONE",
+            "value": "8877665544",
+            "start": 987,
+            "end": 997,
+            "has_edge": true
+          },
+          "target": {
+            "type": "PHONE",
+            "value": "9876543210",
+            "start": 1012,
+            "end": 1022,
+            "has_edge": true
+          },
+          "type": "CALLED",
+          "explanation": "\"EVIDENCE RECOVERED / ATTACHED:\n- Digital/Telecom: Burner phone MSISDN 8877665544, connected to 9876543210\n- Financial: None\n- Physical: Vehicle registration HR-26-DK-9988 flagged on CCTV\n======================================================================\""
+        },
+        {
+          "source": {
+            "type": "PHONE",
+            "value": "8877665544",
+            "start": 987,
+            "end": 997,
+            "has_edge": true
+          },
+          "target": {
+            "type": "VEHICLE",
+            "value": "HR26DK9988",
+            "start": 1074,
+            "end": 1087,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"EVIDENCE RECOVERED / ATTACHED:\n- Digital/Telecom: Burner phone MSISDN 8877665544, connected to 9876543210\n- Financial: None\n- Physical: Vehicle registration HR-26-DK-9988 flagged on CCTV\n======================================================================\""
+        },
+        {
+          "source": {
+            "type": "PHONE",
+            "value": "9876543210",
+            "start": 1012,
+            "end": 1022,
+            "has_edge": true
+          },
+          "target": {
+            "type": "VEHICLE",
+            "value": "HR26DK9988",
+            "start": 1074,
+            "end": 1087,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"EVIDENCE RECOVERED / ATTACHED:\n- Digital/Telecom: Burner phone MSISDN 8877665544, connected to 9876543210\n- Financial: None\n- Physical: Vehicle registration HR-26-DK-9988 flagged on CCTV\n======================================================================\""
+        }
+      ],
+      "aliases": [
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Rohit Bhai",
+            "start": 563,
+            "end": 573,
+            "has_edge": true
+          },
+          "target": {
+            "type": "PERSON",
+            "value": "Rohit",
+            "start": 738,
+            "end": 743,
+            "has_edge": true
+          },
+          "type": "ALIAS_OF"
+        }
+      ]
+    },
+    {
+      "case_id": "FIR-2026-BLR-404",
+      "entities": [
+        {
+          "type": "PHONE",
+          "value": "9876543210",
+          "start": 735,
+          "end": 745,
+          "has_edge": true
+        },
+        {
+          "type": "LOCATION",
+          "value": "Koramangala",
+          "start": 464,
+          "end": 475,
+          "has_edge": true
+        },
+        {
+          "type": "PERSON",
+          "value": "Karthik Reddy",
+          "start": 531,
+          "end": 544,
+          "has_edge": true
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "SIM",
+          "start": 715,
+          "end": 718,
+          "has_edge": true
+        }
+      ],
+      "relationships": [
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Karthik Reddy",
+            "start": 531,
+            "end": 544,
+            "has_edge": true
+          },
+          "target": {
+            "type": "LOCATION",
+            "value": "Koramangala",
+            "start": 464,
+            "end": 475,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"During a targeted narcotics raid in Koramangala, officers intercepted a local cartel distributor named Karthik Reddy.\""
+        },
+        {
+          "source": {
+            "type": "ORGANIZATION",
+            "value": "SIM",
+            "start": 715,
+            "end": 718,
+            "has_edge": true
+          },
+          "target": {
+            "type": "PHONE",
+            "value": "9876543210",
+            "start": 735,
+            "end": 745,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"The burner phone number extracted from the SIM card is exactly 9876543210.\""
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "case_id": "FIR-2026-CHE-777",
+      "entities": [
+        {
+          "type": "PERSON",
+          "value": "Ramesh",
+          "start": 460,
+          "end": 466
+        },
+        {
+          "type": "PERSON",
+          "value": "Charan Hari",
+          "start": 670,
+          "end": 681
+        }
+      ],
+      "relationships": [
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Ramesh",
+            "start": 460,
+            "end": 466
+          },
+          "target": {
+            "type": "CASE",
+            "value": "FIR-2026-CHE-777"
+          },
+          "type": "MENTIONED_IN"
+        },
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Charan Hari",
+            "start": 670,
+            "end": 681
+          },
+          "target": {
+            "type": "CASE",
+            "value": "FIR-2026-CHE-777"
+          },
+          "type": "MENTIONED_IN"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "case_id": "FIR-2026-DEL-0101",
+      "entities": [
+        {
+          "type": "PHONE",
+          "value": "9811023451",
+          "start": 824,
+          "end": 834,
+          "has_edge": true
+        },
+        {
+          "type": "PHONE",
+          "value": "9811023451",
+          "start": 1097,
+          "end": 1107,
+          "has_edge": true
+        },
+        {
+          "type": "VEHICLE",
+          "value": "DL04CC8891",
+          "start": 987,
+          "end": 997
+        },
+        {
+          "type": "VEHICLE",
+          "value": "DL04CC8891",
+          "start": 1225,
+          "end": 1235,
+          "has_edge": true
+        },
+        {
+          "type": "BANK_ACCOUNT",
+          "value": "SBIN00045129987",
+          "start": 745,
+          "end": 760,
+          "has_edge": true
+        },
+        {
+          "type": "LOCATION",
+          "value": "Hauz Khas",
+          "start": 522,
+          "end": 531
+        },
+        {
+          "type": "PERSON",
+          "value": "Charan Hari",
+          "start": 541,
+          "end": 552,
+          "has_edge": true
+        },
+        {
+          "type": "PERSON",
+          "value": "Gaurav Verma",
+          "start": 646,
+          "end": 658,
+          "has_edge": true
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "State Bank of India",
+          "start": 764,
+          "end": 783,
+          "has_edge": true
+        },
+        {
+          "type": "LOCATION",
+          "value": "Connaught Place",
+          "start": 873,
+          "end": 888,
+          "has_edge": true
+        },
+        {
+          "type": "LOCATION",
+          "value": "New Delhi",
+          "start": 890,
+          "end": 899,
+          "has_edge": true
+        }
+      ],
+      "relationships": [
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Charan Hari",
+            "start": 541,
+            "end": 552,
+            "has_edge": true
+          },
+          "target": {
+            "type": "PERSON",
+            "value": "Gaurav Verma",
+            "start": 646,
+            "end": 658,
+            "has_edge": true
+          },
+          "type": "TRANSACTED_TO",
+          "explanation": "\"Accused Charan Hari was observed receiving extortion kickbacks and coordinating mule fund routing with associate Gaurav Verma.\""
+        },
+        {
+          "source": {
+            "type": "BANK_ACCOUNT",
+            "value": "SBIN00045129987",
+            "start": 745,
+            "end": 760,
+            "has_edge": true
+          },
+          "target": {
+            "type": "ORGANIZATION",
+            "value": "State Bank of India",
+            "start": 764,
+            "end": 783,
+            "has_edge": true
+          },
+          "type": "TRANSACTED_TO",
+          "explanation": "\"Intercepted communications verify ransom proceeds were transferred into bank account SBIN00045129987 at State Bank of India.\""
+        },
+        {
+          "source": {
+            "type": "PHONE",
+            "value": "9811023451",
+            "start": 824,
+            "end": 834,
+            "has_edge": true
+          },
+          "target": {
+            "type": "LOCATION",
+            "value": "Connaught Place",
+            "start": 873,
+            "end": 888,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"The primary suspect used mobile number 9811023451 to instruct drop-off logistics across Connaught Place, New Delhi.\""
+        },
+        {
+          "source": {
+            "type": "PHONE",
+            "value": "9811023451",
+            "start": 824,
+            "end": 834,
+            "has_edge": true
+          },
+          "target": {
+            "type": "LOCATION",
+            "value": "New Delhi",
+            "start": 890,
+            "end": 899,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"The primary suspect used mobile number 9811023451 to instruct drop-off logistics across Connaught Place, New Delhi.\""
+        },
+        {
+          "source": {
+            "type": "LOCATION",
+            "value": "Connaught Place",
+            "start": 873,
+            "end": 888,
+            "has_edge": true
+          },
+          "target": {
+            "type": "LOCATION",
+            "value": "New Delhi",
+            "start": 890,
+            "end": 899,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"The primary suspect used mobile number 9811023451 to instruct drop-off logistics across Connaught Place, New Delhi.\""
+        },
+        {
+          "source": {
+            "type": "PHONE",
+            "value": "9811023451",
+            "start": 1097,
+            "end": 1107,
+            "has_edge": true
+          },
+          "target": {
+            "type": "VEHICLE",
+            "value": "DL04CC8891",
+            "start": 1225,
+            "end": 1235,
+            "has_edge": true
+          },
+          "type": "CALLED",
+          "explanation": "\"EVIDENCE RECOVERED / ATTACHED:\n- Digital/Telecom: Call logs and interception warrants for MSISDN 9811023451\n- Financial: Debit/Credit statement for SBI Account SBIN00045129987\n- Physical: ANPR photographic capture of vehicle DL04CC8891\n======================================================================\""
+        },
+        {
+          "source": {
+            "type": "VEHICLE",
+            "value": "DL04CC8891",
+            "start": 987,
+            "end": 997
+          },
+          "target": {
+            "type": "CASE",
+            "value": "FIR-2026-DEL-0101"
+          },
+          "type": "MENTIONED_IN"
+        },
+        {
+          "source": {
+            "type": "LOCATION",
+            "value": "Hauz Khas",
+            "start": 522,
+            "end": 531
+          },
+          "target": {
+            "type": "CASE",
+            "value": "FIR-2026-DEL-0101"
+          },
+          "type": "MENTIONED_IN"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "case_id": "FIR-2026-DEL-0214",
+      "entities": [
+        {
+          "type": "BANK_ACCOUNT",
+          "value": "HDFC00012345678",
+          "start": 567,
+          "end": 582,
+          "has_edge": true
+        },
+        {
+          "type": "PERSON",
+          "value": "Vikas Sharma",
+          "start": 616,
+          "end": 628,
+          "has_edge": true
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "Global Logistics",
+          "start": 642,
+          "end": 658,
+          "has_edge": true
+        },
+        {
+          "type": "LOCATION",
+          "value": "Laxmi Nagar",
+          "start": 820,
+          "end": 831
+        }
+      ],
+      "relationships": [
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Vikas Sharma",
+            "start": 616,
+            "end": 628,
+            "has_edge": true
+          },
+          "target": {
+            "type": "BANK_ACCOUNT",
+            "value": "HDFC00012345678",
+            "start": 567,
+            "end": 582,
+            "has_edge": true
+          },
+          "type": "OWNS_ACCOUNT",
+          "explanation": "\"The primary beneficiary account, HDFC00012345678, is registered under the name of Vikas Sharma, Director of Global Logistics.\""
+        },
+        {
+          "source": {
+            "type": "BANK_ACCOUNT",
+            "value": "HDFC00012345678",
+            "start": 567,
+            "end": 582,
+            "has_edge": true
+          },
+          "target": {
+            "type": "ORGANIZATION",
+            "value": "Global Logistics",
+            "start": 642,
+            "end": 658,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"The primary beneficiary account, HDFC00012345678, is registered under the name of Vikas Sharma, Director of Global Logistics.\""
+        },
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Vikas Sharma",
+            "start": 616,
+            "end": 628,
+            "has_edge": true
+          },
+          "target": {
+            "type": "ORGANIZATION",
+            "value": "Global Logistics",
+            "start": 642,
+            "end": 658,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"The primary beneficiary account, HDFC00012345678, is registered under the name of Vikas Sharma, Director of Global Logistics.\""
+        },
+        {
+          "source": {
+            "type": "LOCATION",
+            "value": "Laxmi Nagar",
+            "start": 820,
+            "end": 831
+          },
+          "target": {
+            "type": "CASE",
+            "value": "FIR-2026-DEL-0214"
+          },
+          "type": "MENTIONED_IN"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "case_id": "FIR-2026-DEL-0405",
+      "entities": [
+        {
+          "type": "VEHICLE",
+          "value": "DL9C1122",
+          "start": 474,
+          "end": 484
+        },
+        {
+          "type": "VEHICLE",
+          "value": "DL9C1122",
+          "start": 952,
+          "end": 962
+        },
+        {
+          "type": "PERSON",
+          "value": "Amit Gurjar",
+          "start": 535,
+          "end": 546
+        },
+        {
+          "type": "PERSON",
+          "value": "Gurjar",
+          "start": 635,
+          "end": 641,
+          "has_edge": true
+        },
+        {
+          "type": "PERSON",
+          "value": "Rudra Pratap",
+          "start": 722,
+          "end": 734,
+          "has_edge": true
+        },
+        {
+          "type": "PERSON",
+          "value": "Pratap",
+          "start": 780,
+          "end": 786,
+          "has_edge": true
+        }
+      ],
+      "relationships": [
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Gurjar",
+            "start": 635,
+            "end": 641,
+            "has_edge": true
+          },
+          "target": {
+            "type": "PERSON",
+            "value": "Rudra Pratap",
+            "start": 722,
+            "end": 734,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"Gurjar claimed he was merely transporting the weapons for a superior he referred to as Rudra Pratap, though no direct contact between Gurjar and Pratap could be established in his phone records.\""
+        },
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Gurjar",
+            "start": 635,
+            "end": 641,
+            "has_edge": true
+          },
+          "target": {
+            "type": "PERSON",
+            "value": "Pratap",
+            "start": 780,
+            "end": 786,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"Gurjar claimed he was merely transporting the weapons for a superior he referred to as Rudra Pratap, though no direct contact between Gurjar and Pratap could be established in his phone records.\""
+        },
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Rudra Pratap",
+            "start": 722,
+            "end": 734,
+            "has_edge": true
+          },
+          "target": {
+            "type": "PERSON",
+            "value": "Pratap",
+            "start": 780,
+            "end": 786,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"Gurjar claimed he was merely transporting the weapons for a superior he referred to as Rudra Pratap, though no direct contact between Gurjar and Pratap could be established in his phone records.\""
+        },
+        {
+          "source": {
+            "type": "VEHICLE",
+            "value": "DL9C1122",
+            "start": 474,
+            "end": 484
+          },
+          "target": {
+            "type": "CASE",
+            "value": "FIR-2026-DEL-0405"
+          },
+          "type": "MENTIONED_IN"
+        },
+        {
+          "source": {
+            "type": "VEHICLE",
+            "value": "DL9C1122",
+            "start": 952,
+            "end": 962
+          },
+          "target": {
+            "type": "CASE",
+            "value": "FIR-2026-DEL-0405"
+          },
+          "type": "MENTIONED_IN"
+        },
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Amit Gurjar",
+            "start": 535,
+            "end": 546
+          },
+          "target": {
+            "type": "CASE",
+            "value": "FIR-2026-DEL-0405"
+          },
+          "type": "MENTIONED_IN"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "case_id": "FIR-2026-DEL-0511",
+      "entities": [
+        {
+          "type": "PHONE",
+          "value": "9999888877",
+          "start": 792,
+          "end": 802,
+          "has_edge": true
+        },
+        {
+          "type": "PHONE",
+          "value": "9999888877",
+          "start": 862,
+          "end": 872
+        },
+        {
+          "type": "BANK_ACCOUNT",
+          "value": "HDFC00012345678",
+          "start": 655,
+          "end": 670,
+          "has_edge": true
+        },
+        {
+          "type": "PERSON",
+          "value": "Salim",
+          "start": 512,
+          "end": 517,
+          "has_edge": true
+        },
+        {
+          "type": "PERSON",
+          "value": "Vikash Sharma",
+          "start": 703,
+          "end": 716,
+          "has_edge": true
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "MSISDN",
+          "start": 785,
+          "end": 791,
+          "has_edge": true
+        },
+        {
+          "type": "LOCATION",
+          "value": "Hawala",
+          "start": 460,
+          "end": 466,
+          "has_edge": true
+        }
+      ],
+      "relationships": [
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Salim",
+            "start": 512,
+            "end": 517,
+            "has_edge": true
+          },
+          "target": {
+            "type": "LOCATION",
+            "value": "Hawala",
+            "start": 460,
+            "end": 466,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"A raid on an underground Hawala operation resulted in the arrest of operator Salim.\""
+        },
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Vikash Sharma",
+            "start": 703,
+            "end": 716,
+            "has_edge": true
+          },
+          "target": {
+            "type": "BANK_ACCOUNT",
+            "value": "HDFC00012345678",
+            "start": 655,
+            "end": 670,
+            "has_edge": true
+          },
+          "type": "OWNS_ACCOUNT",
+          "explanation": "\"The most frequent digital transfers were wired to HDFC00012345678, attributed in the ledger to a \"Vikash Sharma\".\""
+        },
+        {
+          "source": {
+            "type": "ORGANIZATION",
+            "value": "MSISDN",
+            "start": 785,
+            "end": 791,
+            "has_edge": true
+          },
+          "target": {
+            "type": "PHONE",
+            "value": "9999888877",
+            "start": 792,
+            "end": 802,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"Salim's phone showed he received daily confirmation messages from MSISDN 9999888877.\""
+        },
+        {
+          "source": {
+            "type": "PHONE",
+            "value": "9999888877",
+            "start": 862,
+            "end": 872
+          },
+          "target": {
+            "type": "CASE",
+            "value": "FIR-2026-DEL-0511"
+          },
+          "type": "MENTIONED_IN"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "case_id": "FIR-2026-DEL-1011",
+      "entities": [
+        {
+          "type": "BANK_ACCOUNT",
+          "value": "SBIN00045129987",
+          "start": 787,
+          "end": 802,
+          "has_edge": true
+        },
+        {
+          "type": "LOCATION",
+          "value": "Connaught Place",
+          "start": 454,
+          "end": 469,
+          "has_edge": true
+        },
+        {
+          "type": "LOCATION",
+          "value": "Chhatarpur",
+          "start": 551,
+          "end": 561,
+          "has_edge": true
+        },
+        {
+          "type": "PERSON",
+          "value": "Rudra Pratap",
+          "start": 596,
+          "end": 608
+        },
+        {
+          "type": "PERSON",
+          "value": "Amit Gurjar",
+          "start": 634,
+          "end": 645,
+          "has_edge": true
+        },
+        {
+          "type": "PERSON",
+          "value": "Charan Hari",
+          "start": 650,
+          "end": 661,
+          "has_edge": true
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "State Bank of India",
+          "start": 759,
+          "end": 778,
+          "has_edge": true
+        }
+      ],
+      "relationships": [
+        {
+          "source": {
+            "type": "LOCATION",
+            "value": "Connaught Place",
+            "start": 454,
+            "end": 469,
+            "has_edge": true
+          },
+          "target": {
+            "type": "LOCATION",
+            "value": "Chhatarpur",
+            "start": 551,
+            "end": 561,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"Following up on the Connaught Place extortion trace, a tactical raid was conducted on a heavily guarded farmhouse in Chhatarpur.\""
+        },
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Amit Gurjar",
+            "start": 634,
+            "end": 645,
+            "has_edge": true
+          },
+          "target": {
+            "type": "PERSON",
+            "value": "Charan Hari",
+            "start": 650,
+            "end": 661,
+            "has_edge": true
+          },
+          "type": "CO_ACCUSED",
+          "explanation": "\"Inside, police arrested Amit Gurjar and Charan Hari who were destroying financial documents.\""
+        },
+        {
+          "source": {
+            "type": "ORGANIZATION",
+            "value": "State Bank of India",
+            "start": 759,
+            "end": 778,
+            "has_edge": true
+          },
+          "target": {
+            "type": "BANK_ACCOUNT",
+            "value": "SBIN00045129987",
+            "start": 787,
+            "end": 802,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"The shredded documents contained repeated references to State Bank of India account SBIN00045129987.\""
+        },
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Rudra Pratap",
+            "start": 596,
+            "end": 608
+          },
+          "target": {
+            "type": "CASE",
+            "value": "FIR-2026-DEL-1011"
+          },
+          "type": "MENTIONED_IN"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "case_id": "FIR-2026-DEL-1102",
+      "entities": [
+        {
+          "type": "PHONE",
+          "value": "9876543210",
+          "start": 751,
+          "end": 761,
+          "has_edge": true
+        },
+        {
+          "type": "PHONE",
+          "value": "9876543210",
+          "start": 940,
+          "end": 950
+        },
+        {
+          "type": "BANK_ACCOUNT",
+          "value": "HDFC00012345678",
+          "start": 601,
+          "end": 616,
+          "has_edge": true
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "Global Logistics",
+          "start": 496,
+          "end": 512
+        },
+        {
+          "type": "PERSON",
+          "value": "Vikas Sharma",
+          "start": 514,
+          "end": 526
+        },
+        {
+          "type": "PERSON",
+          "value": "Rudra Pratap",
+          "start": 685,
+          "end": 697,
+          "has_edge": true
+        },
+        {
+          "type": "PERSON",
+          "value": "Sharma",
+          "start": 699,
+          "end": 705,
+          "has_edge": true
+        }
+      ],
+      "relationships": [
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Rudra Pratap",
+            "start": 685,
+            "end": 697,
+            "has_edge": true
+          },
+          "target": {
+            "type": "BANK_ACCOUNT",
+            "value": "HDFC00012345678",
+            "start": 601,
+            "end": 616,
+            "has_edge": true
+          },
+          "type": "OWNS_ACCOUNT",
+          "explanation": "\"His personal ledger cross-referenced the HDFC00012345678 laundering account with direct cash handoffs to a man identified as Rudra Pratap.\""
+        },
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Sharma",
+            "start": 699,
+            "end": 705,
+            "has_edge": true
+          },
+          "target": {
+            "type": "PHONE",
+            "value": "9876543210",
+            "start": 751,
+            "end": 761,
+            "has_edge": true
+          },
+          "type": "USES_COMMUNICATION",
+          "explanation": "\"Sharma's primary communication device, using MSISDN 9876543210, was seized, establishing him as the central dispatcher for extortion and narcotics operations over the past two years.\""
+        },
+        {
+          "source": {
+            "type": "PHONE",
+            "value": "9876543210",
+            "start": 940,
+            "end": 950
+          },
+          "target": {
+            "type": "CASE",
+            "value": "FIR-2026-DEL-1102"
+          },
+          "type": "MENTIONED_IN"
+        },
+        {
+          "source": {
+            "type": "ORGANIZATION",
+            "value": "Global Logistics",
+            "start": 496,
+            "end": 512
+          },
+          "target": {
+            "type": "CASE",
+            "value": "FIR-2026-DEL-1102"
+          },
+          "type": "MENTIONED_IN"
+        },
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Vikas Sharma",
+            "start": 514,
+            "end": 526
+          },
+          "target": {
+            "type": "CASE",
+            "value": "FIR-2026-DEL-1102"
+          },
+          "type": "MENTIONED_IN"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "case_id": "FIR-2026-DEL-1250",
+      "entities": [
+        {
+          "type": "BANK_ACCOUNT",
+          "value": "SBIN00045129987",
+          "start": 741,
+          "end": 756,
+          "has_edge": true
+        },
+        {
+          "type": "BANK_ACCOUNT",
+          "value": "HDFC00012345678",
+          "start": 761,
+          "end": 776,
+          "has_edge": true
+        },
+        {
+          "type": "LOCATION",
+          "value": "Chhatarpur",
+          "start": 490,
+          "end": 500,
+          "has_edge": true
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "Global Logistics",
+          "start": 514,
+          "end": 530,
+          "has_edge": true
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "MCOCA",
+          "start": 587,
+          "end": 592,
+          "has_edge": true
+        },
+        {
+          "type": "PERSON",
+          "value": "Rudra Pratap",
+          "start": 641,
+          "end": 653,
+          "has_edge": true
+        },
+        {
+          "type": "PERSON",
+          "value": "Pratap",
+          "start": 655,
+          "end": 661,
+          "has_edge": true
+        },
+        {
+          "type": "PERSON",
+          "value": "Amit Gurjar",
+          "start": 850,
+          "end": 861,
+          "has_edge": true
+        },
+        {
+          "type": "PERSON",
+          "value": "Rohit Bhai",
+          "start": 863,
+          "end": 873,
+          "has_edge": true
+        },
+        {
+          "type": "PERSON",
+          "value": "Charan Hari",
+          "start": 879,
+          "end": 890,
+          "has_edge": true
+        },
+        {
+          "type": "PERSON",
+          "value": "Vikas Sharma",
+          "start": 924,
+          "end": 936,
+          "has_edge": true
+        }
+      ],
+      "relationships": [
+        {
+          "source": {
+            "type": "LOCATION",
+            "value": "Chhatarpur",
+            "start": 490,
+            "end": 500,
+            "has_edge": true
+          },
+          "target": {
+            "type": "ORGANIZATION",
+            "value": "Global Logistics",
+            "start": 514,
+            "end": 530,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"PARLIAMENT STREET\nFIR NO: FIR-2026-DEL-1250\nDATE & TIME: 2026-11-15 19:00\nINVESTIGATING OFFICER: ACP SANJAY DUTT\nOFFENSE / SECTIONS: MCOCA / IPC 120B\nSTATUS: OPEN\n======================================================================\n\nINCIDENT NARRATIVE:\nBased on the consolidated intelligence from the Chhatarpur raid and the Global Logistics sting, a Master Information Report has been filed under MCOCA against the organized crime syndicate headed by Rudra Pratap.\""
+        },
+        {
+          "source": {
+            "type": "LOCATION",
+            "value": "Chhatarpur",
+            "start": 490,
+            "end": 500,
+            "has_edge": true
+          },
+          "target": {
+            "type": "ORGANIZATION",
+            "value": "MCOCA",
+            "start": 587,
+            "end": 592,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"PARLIAMENT STREET\nFIR NO: FIR-2026-DEL-1250\nDATE & TIME: 2026-11-15 19:00\nINVESTIGATING OFFICER: ACP SANJAY DUTT\nOFFENSE / SECTIONS: MCOCA / IPC 120B\nSTATUS: OPEN\n======================================================================\n\nINCIDENT NARRATIVE:\nBased on the consolidated intelligence from the Chhatarpur raid and the Global Logistics sting, a Master Information Report has been filed under MCOCA against the organized crime syndicate headed by Rudra Pratap.\""
+        },
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Rudra Pratap",
+            "start": 641,
+            "end": 653,
+            "has_edge": true
+          },
+          "target": {
+            "type": "LOCATION",
+            "value": "Chhatarpur",
+            "start": 490,
+            "end": 500,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"PARLIAMENT STREET\nFIR NO: FIR-2026-DEL-1250\nDATE & TIME: 2026-11-15 19:00\nINVESTIGATING OFFICER: ACP SANJAY DUTT\nOFFENSE / SECTIONS: MCOCA / IPC 120B\nSTATUS: OPEN\n======================================================================\n\nINCIDENT NARRATIVE:\nBased on the consolidated intelligence from the Chhatarpur raid and the Global Logistics sting, a Master Information Report has been filed under MCOCA against the organized crime syndicate headed by Rudra Pratap.\""
+        },
+        {
+          "source": {
+            "type": "ORGANIZATION",
+            "value": "Global Logistics",
+            "start": 514,
+            "end": 530,
+            "has_edge": true
+          },
+          "target": {
+            "type": "ORGANIZATION",
+            "value": "MCOCA",
+            "start": 587,
+            "end": 592,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"PARLIAMENT STREET\nFIR NO: FIR-2026-DEL-1250\nDATE & TIME: 2026-11-15 19:00\nINVESTIGATING OFFICER: ACP SANJAY DUTT\nOFFENSE / SECTIONS: MCOCA / IPC 120B\nSTATUS: OPEN\n======================================================================\n\nINCIDENT NARRATIVE:\nBased on the consolidated intelligence from the Chhatarpur raid and the Global Logistics sting, a Master Information Report has been filed under MCOCA against the organized crime syndicate headed by Rudra Pratap.\""
+        },
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Rudra Pratap",
+            "start": 641,
+            "end": 653,
+            "has_edge": true
+          },
+          "target": {
+            "type": "ORGANIZATION",
+            "value": "Global Logistics",
+            "start": 514,
+            "end": 530,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"PARLIAMENT STREET\nFIR NO: FIR-2026-DEL-1250\nDATE & TIME: 2026-11-15 19:00\nINVESTIGATING OFFICER: ACP SANJAY DUTT\nOFFENSE / SECTIONS: MCOCA / IPC 120B\nSTATUS: OPEN\n======================================================================\n\nINCIDENT NARRATIVE:\nBased on the consolidated intelligence from the Chhatarpur raid and the Global Logistics sting, a Master Information Report has been filed under MCOCA against the organized crime syndicate headed by Rudra Pratap.\""
+        },
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Rudra Pratap",
+            "start": 641,
+            "end": 653,
+            "has_edge": true
+          },
+          "target": {
+            "type": "ORGANIZATION",
+            "value": "MCOCA",
+            "start": 587,
+            "end": 592,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"PARLIAMENT STREET\nFIR NO: FIR-2026-DEL-1250\nDATE & TIME: 2026-11-15 19:00\nINVESTIGATING OFFICER: ACP SANJAY DUTT\nOFFENSE / SECTIONS: MCOCA / IPC 120B\nSTATUS: OPEN\n======================================================================\n\nINCIDENT NARRATIVE:\nBased on the consolidated intelligence from the Chhatarpur raid and the Global Logistics sting, a Master Information Report has been filed under MCOCA against the organized crime syndicate headed by Rudra Pratap.\""
+        },
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Pratap",
+            "start": 655,
+            "end": 661,
+            "has_edge": true
+          },
+          "target": {
+            "type": "BANK_ACCOUNT",
+            "value": "SBIN00045129987",
+            "start": 741,
+            "end": 756,
+            "has_edge": true
+          },
+          "type": "OWNS_ACCOUNT",
+          "explanation": "\"Pratap has been identified as the ultimate beneficiary of the funds laundered through SBIN00045129987 and HDFC00012345678.\""
+        },
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Pratap",
+            "start": 655,
+            "end": 661,
+            "has_edge": true
+          },
+          "target": {
+            "type": "BANK_ACCOUNT",
+            "value": "HDFC00012345678",
+            "start": 761,
+            "end": 776,
+            "has_edge": true
+          },
+          "type": "OWNS_ACCOUNT",
+          "explanation": "\"Pratap has been identified as the ultimate beneficiary of the funds laundered through SBIN00045129987 and HDFC00012345678.\""
+        },
+        {
+          "source": {
+            "type": "BANK_ACCOUNT",
+            "value": "SBIN00045129987",
+            "start": 741,
+            "end": 756,
+            "has_edge": true
+          },
+          "target": {
+            "type": "BANK_ACCOUNT",
+            "value": "HDFC00012345678",
+            "start": 761,
+            "end": 776,
+            "has_edge": true
+          },
+          "type": "TRANSACTED_TO",
+          "explanation": "\"Pratap has been identified as the ultimate beneficiary of the funds laundered through SBIN00045129987 and HDFC00012345678.\""
+        },
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Amit Gurjar",
+            "start": 850,
+            "end": 861,
+            "has_edge": true
+          },
+          "target": {
+            "type": "PERSON",
+            "value": "Rohit Bhai",
+            "start": 863,
+            "end": 873,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"Extortion, narcotics, and contract killings were executed by associates Amit Gurjar, Rohit Bhai, and Charan Hari, while finances were brokered by Vikas Sharma.\""
+        },
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Amit Gurjar",
+            "start": 850,
+            "end": 861,
+            "has_edge": true
+          },
+          "target": {
+            "type": "PERSON",
+            "value": "Charan Hari",
+            "start": 879,
+            "end": 890,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"Extortion, narcotics, and contract killings were executed by associates Amit Gurjar, Rohit Bhai, and Charan Hari, while finances were brokered by Vikas Sharma.\""
+        },
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Amit Gurjar",
+            "start": 850,
+            "end": 861,
+            "has_edge": true
+          },
+          "target": {
+            "type": "PERSON",
+            "value": "Vikas Sharma",
+            "start": 924,
+            "end": 936,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"Extortion, narcotics, and contract killings were executed by associates Amit Gurjar, Rohit Bhai, and Charan Hari, while finances were brokered by Vikas Sharma.\""
+        },
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Rohit Bhai",
+            "start": 863,
+            "end": 873,
+            "has_edge": true
+          },
+          "target": {
+            "type": "PERSON",
+            "value": "Charan Hari",
+            "start": 879,
+            "end": 890,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"Extortion, narcotics, and contract killings were executed by associates Amit Gurjar, Rohit Bhai, and Charan Hari, while finances were brokered by Vikas Sharma.\""
+        },
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Rohit Bhai",
+            "start": 863,
+            "end": 873,
+            "has_edge": true
+          },
+          "target": {
+            "type": "PERSON",
+            "value": "Vikas Sharma",
+            "start": 924,
+            "end": 936,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"Extortion, narcotics, and contract killings were executed by associates Amit Gurjar, Rohit Bhai, and Charan Hari, while finances were brokered by Vikas Sharma.\""
+        },
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Charan Hari",
+            "start": 879,
+            "end": 890,
+            "has_edge": true
+          },
+          "target": {
+            "type": "PERSON",
+            "value": "Vikas Sharma",
+            "start": 924,
+            "end": 936,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"Extortion, narcotics, and contract killings were executed by associates Amit Gurjar, Rohit Bhai, and Charan Hari, while finances were brokered by Vikas Sharma.\""
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "case_id": "FIR-2026-HR-0622",
+      "entities": [
+        {
+          "type": "PHONE",
+          "value": "9811023451",
+          "start": 711,
+          "end": 721
+        },
+        {
+          "type": "PHONE",
+          "value": "9811023451",
+          "start": 868,
+          "end": 878,
+          "has_edge": true
+        },
+        {
+          "type": "VEHICLE",
+          "value": "DL04CC8891",
+          "start": 631,
+          "end": 641
+        },
+        {
+          "type": "VEHICLE",
+          "value": "DL04CC8891",
+          "start": 925,
+          "end": 935,
+          "has_edge": true
+        }
+      ],
+      "relationships": [
+        {
+          "source": {
+            "type": "PHONE",
+            "value": "9811023451",
+            "start": 868,
+            "end": 878,
+            "has_edge": true
+          },
+          "target": {
+            "type": "VEHICLE",
+            "value": "DL04CC8891",
+            "start": 925,
+            "end": 935,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"EVIDENCE RECOVERED / ATTACHED:\n- Digital/Telecom: Tower dump isolating MSISDN 9811023451\n- Financial: None\n- Physical: Getaway vehicle DL04CC8891\n======================================================================\""
+        },
+        {
+          "source": {
+            "type": "PHONE",
+            "value": "9811023451",
+            "start": 711,
+            "end": 721
+          },
+          "target": {
+            "type": "CASE",
+            "value": "FIR-2026-HR-0622"
+          },
+          "type": "MENTIONED_IN"
+        },
+        {
+          "source": {
+            "type": "VEHICLE",
+            "value": "DL04CC8891",
+            "start": 631,
+            "end": 641
+          },
+          "target": {
+            "type": "CASE",
+            "value": "FIR-2026-HR-0622"
+          },
+          "type": "MENTIONED_IN"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "case_id": "FIR-2026-MUM-901",
+      "entities": [
+        {
+          "type": "BANK_ACCOUNT",
+          "value": "HDFC0001234",
+          "start": 659,
+          "end": 670
+        },
+        {
+          "type": "LOCATION",
+          "value": "Andheri",
+          "start": 466,
+          "end": 473
+        },
+        {
+          "type": "PERSON",
+          "value": "Vikas Sharma",
+          "start": 494,
+          "end": 506
+        }
+      ],
+      "relationships": [
+        {
+          "source": {
+            "type": "BANK_ACCOUNT",
+            "value": "HDFC0001234",
+            "start": 659,
+            "end": 670
+          },
+          "target": {
+            "type": "CASE",
+            "value": "FIR-2026-MUM-901"
+          },
+          "type": "MENTIONED_IN"
+        },
+        {
+          "source": {
+            "type": "LOCATION",
+            "value": "Andheri",
+            "start": 466,
+            "end": 473
+          },
+          "target": {
+            "type": "CASE",
+            "value": "FIR-2026-MUM-901"
+          },
+          "type": "MENTIONED_IN"
+        },
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Vikas Sharma",
+            "start": 494,
+            "end": 506
+          },
+          "target": {
+            "type": "CASE",
+            "value": "FIR-2026-MUM-901"
+          },
+          "type": "MENTIONED_IN"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "case_id": "FIR-2026-RJ-0332",
+      "entities": [
+        {
+          "type": "VEHICLE",
+          "value": "HR26DK9988",
+          "start": 784,
+          "end": 797,
+          "has_edge": true
+        },
+        {
+          "type": "VEHICLE",
+          "value": "HR26DK9988",
+          "start": 1009,
+          "end": 1022
+        },
+        {
+          "type": "BANK_ACCOUNT",
+          "value": "SBIN00045129987",
+          "start": 674,
+          "end": 689,
+          "has_edge": true
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "State Bank of India",
+          "start": 646,
+          "end": 665,
+          "has_edge": true
+        },
+        {
+          "type": "LOCATION",
+          "value": "Haryana",
+          "start": 755,
+          "end": 762,
+          "has_edge": true
+        },
+        {
+          "type": "PERSON",
+          "value": "Bikas Sharma",
+          "start": 853,
+          "end": 865
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "INR 2 Crores to",
+          "start": 630,
+          "end": 645,
+          "has_edge": true
+        }
+      ],
+      "relationships": [
+        {
+          "source": {
+            "type": "ORGANIZATION",
+            "value": "INR 2 Crores to",
+            "start": 630,
+            "end": 645,
+            "has_edge": true
+          },
+          "target": {
+            "type": "ORGANIZATION",
+            "value": "State Bank of India",
+            "start": 646,
+            "end": 665,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"The victim's family was instructed to wire INR 2 Crores to State Bank of India account SBIN00045129987.\""
+        },
+        {
+          "source": {
+            "type": "ORGANIZATION",
+            "value": "INR 2 Crores to",
+            "start": 630,
+            "end": 645,
+            "has_edge": true
+          },
+          "target": {
+            "type": "BANK_ACCOUNT",
+            "value": "SBIN00045129987",
+            "start": 674,
+            "end": 689,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"The victim's family was instructed to wire INR 2 Crores to State Bank of India account SBIN00045129987.\""
+        },
+        {
+          "source": {
+            "type": "ORGANIZATION",
+            "value": "State Bank of India",
+            "start": 646,
+            "end": 665,
+            "has_edge": true
+          },
+          "target": {
+            "type": "BANK_ACCOUNT",
+            "value": "SBIN00045129987",
+            "start": 674,
+            "end": 689,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"The victim's family was instructed to wire INR 2 Crores to State Bank of India account SBIN00045129987.\""
+        },
+        {
+          "source": {
+            "type": "LOCATION",
+            "value": "Haryana",
+            "start": 755,
+            "end": 762,
+            "has_edge": true
+          },
+          "target": {
+            "type": "VEHICLE",
+            "value": "HR26DK9988",
+            "start": 784,
+            "end": 797,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"A witness reported seeing the victim forced into a vehicle with Haryana plates, specifically HR-26-DK-9988.\""
+        },
+        {
+          "source": {
+            "type": "VEHICLE",
+            "value": "HR26DK9988",
+            "start": 1009,
+            "end": 1022
+          },
+          "target": {
+            "type": "CASE",
+            "value": "FIR-2026-RJ-0332"
+          },
+          "type": "MENTIONED_IN"
+        },
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Bikas Sharma",
+            "start": 853,
+            "end": 865
+          },
+          "target": {
+            "type": "CASE",
+            "value": "FIR-2026-RJ-0332"
+          },
+          "type": "MENTIONED_IN"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "case_id": "FIR-2026-RJ-0781",
+      "entities": [
+        {
+          "type": "PHONE",
+          "value": "9999888877",
+          "start": 659,
+          "end": 669,
+          "has_edge": true
+        },
+        {
+          "type": "PHONE",
+          "value": "9999888877",
+          "start": 827,
+          "end": 837
+        },
+        {
+          "type": "PERSON",
+          "value": "Mukesh",
+          "start": 519,
+          "end": 525
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "MSISDN",
+          "start": 652,
+          "end": 658,
+          "has_edge": true
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "Global Logistics",
+          "start": 742,
+          "end": 758,
+          "has_edge": true
+        },
+        {
+          "type": "LOCATION",
+          "value": "Delhi",
+          "start": 762,
+          "end": 767,
+          "has_edge": true
+        }
+      ],
+      "relationships": [
+        {
+          "source": {
+            "type": "ORGANIZATION",
+            "value": "MSISDN",
+            "start": 652,
+            "end": 658,
+            "has_edge": true
+          },
+          "target": {
+            "type": "PHONE",
+            "value": "9999888877",
+            "start": 659,
+            "end": 669,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"Phone forensics revealed he was in constant contact with MSISDN 9999888877 throughout the journey.\""
+        },
+        {
+          "source": {
+            "type": "ORGANIZATION",
+            "value": "Global Logistics",
+            "start": 742,
+            "end": 758,
+            "has_edge": true
+          },
+          "target": {
+            "type": "LOCATION",
+            "value": "Delhi",
+            "start": 762,
+            "end": 767,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"The cargo was addressed to a warehouse owned by Global Logistics in Delhi.\""
+        },
+        {
+          "source": {
+            "type": "PHONE",
+            "value": "9999888877",
+            "start": 827,
+            "end": 837
+          },
+          "target": {
+            "type": "CASE",
+            "value": "FIR-2026-RJ-0781"
+          },
+          "type": "MENTIONED_IN"
+        },
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Mukesh",
+            "start": 519,
+            "end": 525
+          },
+          "target": {
+            "type": "CASE",
+            "value": "FIR-2026-RJ-0781"
+          },
+          "type": "MENTIONED_IN"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "case_id": "FIR-2026-RJ-0910",
+      "entities": [
+        {
+          "type": "PHONE",
+          "value": "9999888877",
+          "start": 765,
+          "end": 775
+        },
+        {
+          "type": "PHONE",
+          "value": "9999888877",
+          "start": 861,
+          "end": 871,
+          "has_edge": true
+        },
+        {
+          "type": "VEHICLE",
+          "value": "HR26DK9988",
+          "start": 659,
+          "end": 672
+        },
+        {
+          "type": "VEHICLE",
+          "value": "HR26DK9988",
+          "start": 920,
+          "end": 933,
+          "has_edge": true
+        },
+        {
+          "type": "LOCATION",
+          "value": "Udaipur",
+          "start": 510,
+          "end": 517
+        },
+        {
+          "type": "LOCATION",
+          "value": "Aravalli",
+          "start": 604,
+          "end": 612
+        }
+      ],
+      "relationships": [
+        {
+          "source": {
+            "type": "PHONE",
+            "value": "9999888877",
+            "start": 861,
+            "end": 871,
+            "has_edge": true
+          },
+          "target": {
+            "type": "VEHICLE",
+            "value": "HR26DK9988",
+            "start": 920,
+            "end": 933,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"Satellite phone logging calls to 9999888877\n- Financial: None\n- Physical: Abandoned vehicle HR-26-DK-9988\n======================================================================\""
+        },
+        {
+          "source": {
+            "type": "PHONE",
+            "value": "9999888877",
+            "start": 765,
+            "end": 775
+          },
+          "target": {
+            "type": "CASE",
+            "value": "FIR-2026-RJ-0910"
+          },
+          "type": "MENTIONED_IN"
+        },
+        {
+          "source": {
+            "type": "VEHICLE",
+            "value": "HR26DK9988",
+            "start": 659,
+            "end": 672
+          },
+          "target": {
+            "type": "CASE",
+            "value": "FIR-2026-RJ-0910"
+          },
+          "type": "MENTIONED_IN"
+        },
+        {
+          "source": {
+            "type": "LOCATION",
+            "value": "Udaipur",
+            "start": 510,
+            "end": 517
+          },
+          "target": {
+            "type": "CASE",
+            "value": "FIR-2026-RJ-0910"
+          },
+          "type": "MENTIONED_IN"
+        },
+        {
+          "source": {
+            "type": "LOCATION",
+            "value": "Aravalli",
+            "start": 604,
+            "end": 612
+          },
+          "target": {
+            "type": "CASE",
+            "value": "FIR-2026-RJ-0910"
+          },
+          "type": "MENTIONED_IN"
+        }
+      ],
+      "aliases": []
     }
   ]
 }

@@ -11,7 +11,7 @@ from nlp_pipeline.extractors import extract_all
 from nlp_pipeline.linker import extract_relationships
 
 firs_dir = os.path.join("..", "data-gen", "firs")
-demo_files = sorted(f for f in os.listdir(firs_dir) if f.endswith(".txt"))[:2]
+demo_files = sorted(f for f in os.listdir(firs_dir) if f.endswith(".txt"))
 
 dataset = {
     "analysis_mode": "precomputed",
