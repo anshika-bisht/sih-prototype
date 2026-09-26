@@ -99,6 +99,31 @@ def _boot_ingest_all_firs():
         print("[BOOT] No FIR directory found, skipping.")
         return
 
+    import json
+    lightweight_mode = os.environ.get("ENABLE_LIGHTWEIGHT_NLP", "false").lower() == "true"
+    bert_disabled = os.environ.get("ENABLE_BERT_NER", "true").lower() == "false"
+    precomputed_path = os.path.join(os.path.dirname(__file__), "data", "precomputed_demo_analysis.json")
+
+    if lightweight_mode and bert_disabled and os.path.exists(precomputed_path):
+        print("[BOOT] Loading precomputed demo graph dataset for Render optimization...")
+        try:
+            with open(precomputed_path, "r", encoding="utf-8") as f:
+                dataset = json.load(f)
+            for case_data in dataset.get("cases", []):
+                case_id = case_data["case_id"]
+                entities = case_data.get("entities", [])
+                relationships = case_data.get("relationships", [])
+                aliases = case_data.get("aliases", [])
+                _add_to_memory_graph(entities, relationships + aliases, case_id)
+                try:
+                    db_client.ingest_data(entities, relationships, aliases, case_id)
+                except Exception:
+                    pass
+            print(f"[BOOT] Loaded precomputed dataset — {len(_graph_cache['nodes'])} nodes, {len(_graph_cache['edges'])} edges")
+            return
+        except Exception as e:
+            print(f"[BOOT] Failed to load precomputed dataset: {e}. Falling back...")
+
     files = sorted(f for f in os.listdir(firs_dir) if f.endswith(".txt"))
     # Render constraint: only load 2 files to keep memory and CPU lightweight
     demo_files = files[:2]

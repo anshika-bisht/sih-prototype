@@ -1,0 +1,275 @@
+{
+  "analysis_mode": "precomputed",
+  "pipeline_version": "1.0",
+  "cases": [
+    {
+      "case_id": "FIR-2024-DEL-0999",
+      "entities": [
+        {
+          "type": "VEHICLE",
+          "value": "DL9C1122",
+          "start": 785,
+          "end": 795
+        },
+        {
+          "type": "VEHICLE",
+          "value": "DL9C1122",
+          "start": 1019,
+          "end": 1029
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "Economic Offenses Wing",
+          "start": 440,
+          "end": 462,
+          "has_edge": true
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "Apex Traders",
+          "start": 498,
+          "end": 510,
+          "has_edge": true
+        },
+        {
+          "type": "PERSON",
+          "value": "Rudra Pratap",
+          "start": 587,
+          "end": 599
+        }
+      ],
+      "relationships": [
+        {
+          "source": {
+            "type": "ORGANIZATION",
+            "value": "Economic Offenses Wing",
+            "start": 440,
+            "end": 462,
+            "has_edge": true
+          },
+          "target": {
+            "type": "ORGANIZATION",
+            "value": "Apex Traders",
+            "start": 498,
+            "end": 510,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"IPC 420 (FRAUD)\nSTATUS: CLOSED\n======================================================================\n\nINCIDENT NARRATIVE:\nEconomic Offenses Wing investigated a shell company named Apex Traders for GST fraud.\""
+        },
+        {
+          "source": {
+            "type": "VEHICLE",
+            "value": "DL9C1122",
+            "start": 785,
+            "end": 795
+          },
+          "target": {
+            "type": "CASE",
+            "value": "FIR-2024-DEL-0999"
+          },
+          "type": "MENTIONED_IN"
+        },
+        {
+          "source": {
+            "type": "VEHICLE",
+            "value": "DL9C1122",
+            "start": 1019,
+            "end": 1029
+          },
+          "target": {
+            "type": "CASE",
+            "value": "FIR-2024-DEL-0999"
+          },
+          "type": "MENTIONED_IN"
+        },
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Rudra Pratap",
+            "start": 587,
+            "end": 599
+          },
+          "target": {
+            "type": "CASE",
+            "value": "FIR-2024-DEL-0999"
+          },
+          "type": "MENTIONED_IN"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "case_id": "FIR-2025-DEL-0042",
+      "entities": [
+        {
+          "type": "PHONE",
+          "value": "9876543210",
+          "start": 836,
+          "end": 846,
+          "has_edge": true
+        },
+        {
+          "type": "PHONE",
+          "value": "9988776655",
+          "start": 962,
+          "end": 972,
+          "has_edge": true
+        },
+        {
+          "type": "PHONE",
+          "value": "9876543210",
+          "start": 984,
+          "end": 994,
+          "has_edge": true
+        },
+        {
+          "type": "VEHICLE",
+          "value": "DL9C1122",
+          "start": 666,
+          "end": 676
+        },
+        {
+          "type": "VEHICLE",
+          "value": "DL9C1122",
+          "start": 1056,
+          "end": 1066,
+          "has_edge": true
+        },
+        {
+          "type": "LOCATION",
+          "value": "Hauz Khas",
+          "start": 527,
+          "end": 536
+        },
+        {
+          "type": "PERSON",
+          "value": "Amit Gurjar",
+          "start": 554,
+          "end": 565
+        },
+        {
+          "type": "PERSON",
+          "value": "Gurjar",
+          "start": 700,
+          "end": 706,
+          "has_edge": true
+        }
+      ],
+      "relationships": [
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Gurjar",
+            "start": 700,
+            "end": 706,
+            "has_edge": true
+          },
+          "target": {
+            "type": "PHONE",
+            "value": "9876543210",
+            "start": 836,
+            "end": 846,
+            "has_edge": true
+          },
+          "type": "USES_COMMUNICATION",
+          "explanation": "\"During interrogation, Gurjar refused to name his suppliers but digital forensics on his seized mobile device revealed frequent outbound calls to phone number 9876543210 just prior to the delivery.\""
+        },
+        {
+          "source": {
+            "type": "PHONE",
+            "value": "9988776655",
+            "start": 962,
+            "end": 972,
+            "has_edge": true
+          },
+          "target": {
+            "type": "PHONE",
+            "value": "9876543210",
+            "start": 984,
+            "end": 994,
+            "has_edge": true
+          },
+          "type": "CALLED",
+          "explanation": "\"EVIDENCE RECOVERED / ATTACHED:\n- Digital/Telecom: Call records associated with MSISDN 9988776655 (Suspect), 9876543210 (Unknown)\n- Financial: None\n- Physical: Vehicle registration DL-9C-1122 (Registered to Apex Traders)\""
+        },
+        {
+          "source": {
+            "type": "PHONE",
+            "value": "9988776655",
+            "start": 962,
+            "end": 972,
+            "has_edge": true
+          },
+          "target": {
+            "type": "VEHICLE",
+            "value": "DL9C1122",
+            "start": 1056,
+            "end": 1066,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"EVIDENCE RECOVERED / ATTACHED:\n- Digital/Telecom: Call records associated with MSISDN 9988776655 (Suspect), 9876543210 (Unknown)\n- Financial: None\n- Physical: Vehicle registration DL-9C-1122 (Registered to Apex Traders)\""
+        },
+        {
+          "source": {
+            "type": "PHONE",
+            "value": "9876543210",
+            "start": 984,
+            "end": 994,
+            "has_edge": true
+          },
+          "target": {
+            "type": "VEHICLE",
+            "value": "DL9C1122",
+            "start": 1056,
+            "end": 1066,
+            "has_edge": true
+          },
+          "type": "ASSOCIATE",
+          "explanation": "\"EVIDENCE RECOVERED / ATTACHED:\n- Digital/Telecom: Call records associated with MSISDN 9988776655 (Suspect), 9876543210 (Unknown)\n- Financial: None\n- Physical: Vehicle registration DL-9C-1122 (Registered to Apex Traders)\""
+        },
+        {
+          "source": {
+            "type": "VEHICLE",
+            "value": "DL9C1122",
+            "start": 666,
+            "end": 676
+          },
+          "target": {
+            "type": "CASE",
+            "value": "FIR-2025-DEL-0042"
+          },
+          "type": "MENTIONED_IN"
+        },
+        {
+          "source": {
+            "type": "LOCATION",
+            "value": "Hauz Khas",
+            "start": 527,
+            "end": 536
+          },
+          "target": {
+            "type": "CASE",
+            "value": "FIR-2025-DEL-0042"
+          },
+          "type": "MENTIONED_IN"
+        },
+        {
+          "source": {
+            "type": "PERSON",
+            "value": "Amit Gurjar",
+            "start": 554,
+            "end": 565
+          },
+          "target": {
+            "type": "CASE",
+            "value": "FIR-2025-DEL-0042"
+          },
+          "type": "MENTIONED_IN"
+        }
+      ],
+      "aliases": []
+    }
+  ]
+}
