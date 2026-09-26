@@ -4,6 +4,8 @@ from fastapi.responses import FileResponse
 import os, re
 import uvicorn
 from pydantic import BaseModel
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import HTMLResponse
 
 from nlp_pipeline.extractors import extract_all, extract_regex_only
 from nlp_pipeline.linker import extract_relationships, nlp as _spacy_nlp
@@ -19,6 +21,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Serve the frontend statically for single Render service (Moved to bottom)
+frontend_path = os.path.join(os.path.dirname(__file__), "..", "frontend")
 
 db_client = Neo4jClient()
 auditor = BlockchainAuditor()
@@ -79,17 +84,29 @@ def _add_to_memory_graph(entities: list, relationships: list, case_id: str):
 def _boot_ingest_all_firs():
     """Synchronous boot ingestion using the already-loaded spaCy model + regex.
     Reuses the nlp singleton from linker.py — no double loading."""
-    firs_dir = os.path.join("..", "data-gen", "firs")
+    
+    try:
+        with db_client.driver.session() as session:
+            res = session.run("MATCH (c:CASE) RETURN count(c) as cnt")
+            if res.single()["cnt"] > 0:
+                print("[BOOT] Neo4j is already seeded. Skipping demo data ingestion.")
+                return
+    except Exception as e:
+        print(f"[BOOT] Neo4j connection check failed ({e}). Proceeding to seed memory graph.")
+
+    firs_dir = os.path.join(os.path.dirname(__file__), "..", "data-gen", "firs")
     if not os.path.isdir(firs_dir):
         print("[BOOT] No FIR directory found, skipping.")
         return
 
     files = sorted(f for f in os.listdir(firs_dir) if f.endswith(".txt"))
-    print(f"[BOOT] Processing {len(files)} FIR files with spaCy + regex...")
+    # Render constraint: only load 2 files to keep memory and CPU lightweight
+    demo_files = files[:2]
+    print(f"[BOOT] Processing {len(demo_files)} demo FIR files with spaCy + regex...")
     label_map = {"PERSON": "PERSON", "ORG": "ORGANIZATION",
                  "GPE": "LOCATION", "LOC": "LOCATION"}
 
-    for fname in files:
+    for fname in demo_files:
         case_id = fname.replace(".txt", "")
         fpath = os.path.join(firs_dir, fname)
         try:
@@ -147,7 +164,7 @@ _compute_metrics()
 
 @app.get("/api/cases")
 def get_cases():
-    firs_dir = os.path.join("..", "data-gen", "firs")
+    firs_dir = os.path.join(os.path.dirname(__file__), "..", "data-gen", "firs")
     active = []
     closed = []
 
@@ -194,7 +211,7 @@ import mimetypes
 
 @app.get("/api/document/{filename}")
 def get_document(filename: str):
-    base_dir = os.path.join("..", "data-gen")
+    base_dir = os.path.join(os.path.dirname(__file__), "..", "data-gen")
     for root, dirs, files in os.walk(base_dir):
         if filename in files:
             file_path = os.path.join(root, filename)
@@ -212,7 +229,7 @@ def get_document(filename: str):
 
 @app.get("/api/files/{case_id}")
 def get_case_files(case_id: str):
-    base_dir = os.path.join("..", "data-gen")
+    base_dir = os.path.join(os.path.dirname(__file__), "..", "data-gen")
     linked_files = []
     for root, dirs, files in os.walk(base_dir):
         for f in files:
@@ -263,7 +280,7 @@ async def ingest_data(file: UploadFile = File(...), case_id: str = Form(...)):
     ext = ".pdf" if file.filename.lower().endswith(".pdf") else ".txt"
     filename = f"{case_id}{ext}"
 
-    firs_dir = os.path.join("..", "data-gen", "firs")
+    firs_dir = os.path.join(os.path.dirname(__file__), "..", "data-gen", "firs")
     os.makedirs(firs_dir, exist_ok=True)
     file_path = os.path.join(firs_dir, filename)
     with open(file_path, "wb") as f:
@@ -318,7 +335,7 @@ class MonitorRequest(BaseModel):
 @app.post("/api/monitor")
 def monitor_files(req: MonitorRequest):
     results = {}
-    base_dir = os.path.join("..", "data-gen")
+    base_dir = os.path.join(os.path.dirname(__file__), "..", "data-gen")
     for filename in req.filenames:
         found_path = None
         for root, dirs, files in os.walk(base_dir):
@@ -343,5 +360,9 @@ def verify_evidence(file_hash: str):
         return res
     raise HTTPException(status_code=404, detail="Evidence not found in ledger")
 
+if os.path.exists(frontend_path):
+    app.mount("/", StaticFiles(directory=frontend_path, html=True), name="frontend")
+
 if __name__ == "__main__":
-    uvicorn.run("app:app", host="0.0.0.0", port=8000, reload=True)
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("app:app", host="0.0.0.0", port=port, reload=True)

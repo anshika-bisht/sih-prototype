@@ -1,15 +1,20 @@
 import re
+import os
 from transformers import pipeline
 
-try:
-    ner_pipeline = pipeline(
-        "ner",
-        model="dslim/bert-base-NER",
-        aggregation_strategy="first"   
-    )
-except Exception as e:
-    print(f"Error loading BERT model: {e}")
+if os.environ.get("ENABLE_LIGHTWEIGHT_NLP", "false").lower() == "true" or os.environ.get("ENABLE_BERT_NER", "true").lower() == "false":
+    print("Lightweight mode: BERT NER disabled.")
     ner_pipeline = None
+else:
+    try:
+        ner_pipeline = pipeline(
+            "ner",
+            model="dslim/bert-base-NER",
+            aggregation_strategy="first"   
+        )
+    except Exception as e:
+        print(f"Error loading BERT model: {e}")
+        ner_pipeline = None
 
 _HEADER_LINE_PREFIXES = (
     "STATE:", "DISTRICT:", "POLICE STATION:", "FIR NO:",

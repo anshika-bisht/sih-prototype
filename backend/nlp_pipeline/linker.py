@@ -1,11 +1,16 @@
 import jellyfish
 import spacy
+import os
 
-try:
-    nlp = spacy.load("en_core_web_sm")
-except OSError:
-    print("en_core_web_sm not found, please install it.")
+if os.environ.get("ENABLE_LIGHTWEIGHT_NLP", "false").lower() == "true":
+    print("Lightweight mode: spaCy disabled.")
     nlp = None
+else:
+    try:
+        nlp = spacy.load("en_core_web_sm")
+    except OSError:
+        print("en_core_web_sm not found, please install it.")
+        nlp = None
 
 def resolve_entities(entities):
     """

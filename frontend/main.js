@@ -7,7 +7,7 @@ let integrityMonitorInterval = null;
 let acknowledgedTamperFiles = new Set();  // Files user has dismissed — won't re-alert until page reload
 let currentTamperFiles = new Set();       // Currently active (unacknowledged) tampered files
 
-const API_BASE = "http://localhost:8000/api";
+const API_BASE = window.location.origin + "/api";
 
 // --- Global Formatter Utilities ---
 function renderFileLink(filename, displayText = null) {
