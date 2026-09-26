@@ -7,31 +7,31 @@ CHAKRAVYUH is a cutting-edge law enforcement portal designed to analyze criminal
 - **Python 3.10+** (Added to system PATH)
 - **Node.js & npm**
 - **Neo4j Desktop / Server** running locally at `bolt://localhost:7687` (Default credentials: `neo4j` / `password`)
+- **Git Bash** (Required for Windows users to run the startup script)
 
 ## Quick Start
 
-We provide automated setup scripts to configure the environment, install required dependencies, and start all necessary services with a single command.
+We provide setup scripts to automatically set up the environment, install required dependencies, and start all necessary services.
 
-### **Mac / Linux**
-Open your terminal and run the shell script:
+**For Linux / macOS:**
 ```bash
+# Run the automated setup and start script
 ./run.sh
 ```
 
-### **Windows**
-Open **PowerShell** (you can right-click the folder and select "Open in Terminal") and run the script:
+**For Windows (PowerShell):**
 ```powershell
+# Run the automated setup and start script
 .\run.ps1
 ```
-*(Note: If you get an execution policy error, run `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass` first).*
 
-**What the setup scripts do:**
-- Detects your system and sets up a Python virtual environment automatically if one does not exist.
-- Installs all Python dependencies and downloads required ML models (`spaCy`).
-- Installs necessary Node.js modules for the local blockchain if missing.
-- Boots up the Hardhat local blockchain and deploys the smart contract.
-- Starts the FastAPI Backend server.
-- Starts the Frontend UI server.
+**What the scripts do:**
+- Set up a Python virtual environment automatically if one does not exist.
+- Install all Python dependencies and download required ML models (`spaCy`).
+- Install necessary Node.js modules for the local blockchain if missing.
+- Boot up the Hardhat local blockchain and deploy the smart contract.
+- Start the FastAPI Backend server.
+- Start the Frontend UI server.
 
 ## Manual Setup (If you prefer not to use `run.sh`)
 

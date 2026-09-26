@@ -816,6 +816,11 @@ function initCytoscape() {
     cy.on('tap', 'edge', function(evt){
         const edge = evt.target;
         populateInspectorEdge(edge.data());
+        const rp = document.getElementById('right-pane');
+        if (rp) {
+            rp.classList.add('force-open');
+            rp.classList.remove('translate-x-full');
+        }
     });
 
     // Listeners for filters
@@ -1222,6 +1227,71 @@ function isolateSubgraph(nodeId) {
 
 function populateInspectorEdge(data) {
     const inspector = document.getElementById('inspector-content');
+    
+    // Attempt to resolve entity names from Cytoscape if available
+    const sourceNode = cy ? cy.getElementById(data.source) : null;
+    const targetNode = cy ? cy.getElementById(data.target) : null;
+    const sourceName = (sourceNode && sourceNode.length > 0) ? (sourceNode.data('label') || data.source) : data.source;
+    const targetName = (targetNode && targetNode.length > 0) ? (targetNode.data('label') || data.target) : data.target;
+    
+    const status = data.verificationStatus || 'pending';
+    
+    let verificationHtml = '';
+    
+    if (status === 'pending') {
+        verificationHtml = `
+            <div class="bg-slate-900 p-3 border border-slate-700 space-y-3 transition-all duration-300">
+                <div class="text-[10px] font-bold text-yellow-500 tracking-widest uppercase">
+                    Pending Officer Review
+                </div>
+                <div class="text-[10px] text-slate-400 uppercase tracking-widest">
+                    AI-Detected Link
+                </div>
+                
+                <div class="text-xs font-mono text-slate-300 mt-2">
+                    <span class="text-white font-bold">${sourceName}</span> &rarr; <span class="text-white font-bold">${targetName}</span>
+                </div>
+                
+                <div class="text-[10px] text-slate-400 mt-2">
+                    AI CONFIDENCE <span class="text-cyan-400 font-bold ml-2">87%</span>
+                </div>
+                
+                <div class="flex flex-row space-x-2 mt-3 pt-2 border-t border-slate-700/50">
+                    <button onclick="confirmLink('${data.id}')" class="flex-1 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-600 py-1.5 text-[10px] font-bold uppercase tracking-widest transition-colors shadow-sm text-center">✓ Confirm Link</button>
+                    <button onclick="rejectLink('${data.id}')" class="flex-1 bg-red-900/30 hover:bg-red-900/50 text-red-400 border border-red-700/50 py-1.5 text-[10px] font-bold uppercase tracking-widest transition-colors shadow-sm text-center">✕ Reject Link</button>
+                </div>
+            </div>
+        `;
+    } else if (status === 'confirmed') {
+        verificationHtml = `
+            <div class="bg-slate-900/50 p-3 border border-emerald-900/50 space-y-2 transition-all duration-300">
+                <div class="text-[10px] font-bold text-emerald-400 tracking-widest uppercase flex items-center">
+                    ✓ Confirmed By Officer
+                </div>
+                <div class="text-xs font-mono text-slate-300">
+                    <span class="text-white font-bold">${sourceName}</span> &rarr; <span class="text-white font-bold">${targetName}</span>
+                </div>
+                <div class="text-[10px] text-slate-400 leading-relaxed">
+                    Verification<br/>Officer confirmed this AI-detected relationship.
+                </div>
+            </div>
+        `;
+    } else if (status === 'rejected') {
+        verificationHtml = `
+            <div class="bg-slate-900/50 p-3 border border-red-900/50 space-y-2 transition-all duration-300">
+                <div class="text-[10px] font-bold text-red-400 tracking-widest uppercase flex items-center">
+                    ✕ Rejected By Officer
+                </div>
+                <div class="text-xs font-mono text-slate-300">
+                    <span class="text-white font-bold">${sourceName}</span> &rarr; <span class="text-white font-bold">${targetName}</span>
+                </div>
+                <div class="text-[10px] text-slate-400 leading-relaxed">
+                    Verification<br/>Officer rejected this AI-detected relationship.
+                </div>
+            </div>
+        `;
+    }
+
     inspector.innerHTML = `
         <div class="mb-4 border-b border-slate-700 pb-2">
             <h3 class="text-sm font-bold text-slate-100 font-mono tracking-widest uppercase">Link Analysis</h3>
@@ -1232,8 +1302,33 @@ function populateInspectorEdge(data) {
                 <h4 class="text-[10px] font-semibold text-slate-500 uppercase tracking-widest mb-1">Explainable Connections</h4>
                 <p class="text-xs font-mono text-slate-300 bg-slate-900 p-2 border border-slate-700">${data.explanation || `Direct extraction from evidentiary text. The NLP pipeline explicitly detected a <span class="text-cyan-400 font-bold">${data.type}</span> relationship between these entities.`}</p>
             </div>
+            
+            <div class="mt-4 border-t border-slate-700 pt-4">
+                <h4 class="text-[10px] font-semibold text-slate-500 uppercase tracking-widest mb-2">Human Verification</h4>
+                ${verificationHtml}
+            </div>
         </div>
     `;
+}
+
+function confirmLink(edgeId) {
+    if(cy) {
+        const edge = cy.getElementById(edgeId);
+        if (edge && edge.length > 0) {
+            edge.data('verificationStatus', 'confirmed');
+            populateInspectorEdge(edge.data());
+        }
+    }
+}
+
+function rejectLink(edgeId) {
+    if(cy) {
+        const edge = cy.getElementById(edgeId);
+        if (edge && edge.length > 0) {
+            edge.data('verificationStatus', 'rejected');
+            populateInspectorEdge(edge.data());
+        }
+    }
 }
 
 // --- Universal Entity Search ---
@@ -2608,3 +2703,128 @@ async function autoVerifyCaseFiles(fileNames, caseId) {
     } catch(e) { console.error('Auto-verify case files failed:', e); }
 }
 
+function toggleVisualizationMode() {
+    const mode = document.getElementById('visualization-mode').value;
+    const cyContainer = document.getElementById('cy');
+    const geoContainer = document.getElementById('geo-map');
+    
+    if (mode === 'network') {
+        cyContainer.classList.remove('hidden');
+        geoContainer.classList.add('hidden');
+    } else {
+        cyContainer.classList.add('hidden');
+        geoContainer.classList.remove('hidden');
+        if (!geoContainer.hasAttribute('data-rendered')) {
+            renderGeographicalMap(geoContainer);
+            geoContainer.setAttribute('data-rendered', 'true');
+        }
+    }
+}
+
+function renderGeographicalMap(container) {
+    // Faint grid background
+    container.style.backgroundImage = 'radial-gradient(circle, #1e293b 1px, transparent 1px)';
+    container.style.backgroundSize = '40px 40px';
+    container.style.position = 'relative';
+    container.style.overflow = 'hidden';
+
+    container.innerHTML = `
+        <div class="absolute inset-0 pointer-events-none opacity-10 flex items-center justify-center">
+            <svg viewBox="0 0 100 100" class="w-full h-full max-w-2xl max-h-2xl">
+                <!-- Abstract polygon for subcontinent -->
+                <polygon points="30,20 60,20 80,45 60,95 40,80 20,50" fill="none" stroke="#64748b" stroke-width="0.5"/>
+            </svg>
+        </div>
+        <div id="geo-map-content" class="relative w-full h-full max-w-4xl mx-auto">
+        </div>
+    `;
+
+    const mapContent = document.getElementById('geo-map-content');
+
+    const cities = [
+        { id: 'delhi', name: 'Delhi', top: '20%', left: '45%', type: 'LOCATION', entity: 'Safehouse Alpha' },
+        { id: 'jaipur', name: 'Jaipur', top: '30%', left: '38%', type: 'PERSON', entity: 'Subject X' },
+        { id: 'lucknow', name: 'Lucknow', top: '32%', left: '55%', type: 'PHONE', entity: '+91-9876543210' },
+        { id: 'ahmedabad', name: 'Ahmedabad', top: '45%', left: '32%', type: 'ACCOUNT', entity: 'ACC-19842' },
+        { id: 'mumbai', name: 'Mumbai', top: '65%', left: '30%', type: 'PERSON', entity: 'Subject Y' },
+        { id: 'hyderabad', name: 'Hyderabad', top: '65%', left: '50%', type: 'PHONE', entity: '+91-8888888888' },
+        { id: 'bengaluru', name: 'Bengaluru', top: '82%', left: '45%', type: 'ACCOUNT', entity: 'ACC-99211' },
+        { id: 'kolkata', name: 'Kolkata', top: '48%', left: '72%', type: 'PERSON', entity: 'Subject Z' }
+    ];
+
+    const connections = [
+        { source: 'ahmedabad', target: 'mumbai', type: 'Financial Transfer', color: '#fbbf24', style: 'solid' },
+        { source: 'mumbai', target: 'delhi', type: 'Telecom (CDR)', color: '#10b981', style: 'dashed' },
+        { source: 'delhi', target: 'lucknow', type: 'Co-Accused / FIR', color: '#3b82f6', style: 'solid' },
+        { source: 'hyderabad', target: 'bengaluru', type: 'AI Predicted (Hidden)', color: '#8b5cf6', style: 'dotted' }
+    ];
+
+    let svgHtml = '<svg class="absolute inset-0 w-full h-full pointer-events-none">';
+    connections.forEach(conn => {
+        const sourceCity = cities.find(c => c.id === conn.source);
+        const targetCity = cities.find(c => c.id === conn.target);
+        if (sourceCity && targetCity) {
+            let strokeDasharray = "";
+            if (conn.style === 'dashed') strokeDasharray = "4,4";
+            if (conn.style === 'dotted') strokeDasharray = "2,4";
+            svgHtml += `<line x1="${sourceCity.left}" y1="${sourceCity.top}" x2="${targetCity.left}" y2="${targetCity.top}" stroke="${conn.color}" stroke-width="1.5" stroke-dasharray="${strokeDasharray}" opacity="0.6"/>`;
+        }
+    });
+    svgHtml += '</svg>';
+    mapContent.innerHTML += svgHtml;
+
+    cities.forEach(city => {
+        let colorClass = 'bg-slate-500 border-slate-400';
+        if (city.type === 'PERSON') colorClass = 'bg-red-900 border-red-500';
+        else if (city.type === 'PHONE') colorClass = 'bg-blue-900 border-blue-500';
+        else if (city.type === 'ACCOUNT') colorClass = 'bg-amber-900 border-amber-500';
+        else if (city.type === 'LOCATION') colorClass = 'bg-emerald-900 border-emerald-500';
+
+        const markerHtml = `
+            <div class="absolute group transform -translate-x-1/2 -translate-y-1/2 cursor-pointer flex flex-col items-center z-10" style="top: ${city.top}; left: ${city.left};" onclick="selectGeoNode('${city.name}', '${city.entity}', '${city.type}')">
+                <div class="w-3 h-3 rounded-full border ${colorClass} shadow-[0_0_8px_rgba(255,255,255,0.2)] group-hover:scale-150 transition-transform duration-200"></div>
+                <div class="mt-1 text-[9px] font-mono font-bold text-slate-400 uppercase tracking-widest bg-slate-900/80 px-1 rounded whitespace-nowrap opacity-70 group-hover:opacity-100">${city.name}</div>
+                
+                <div class="absolute bottom-full mb-2 hidden group-hover:block w-40 bg-slate-800 border border-slate-600 rounded p-2 text-xs shadow-xl z-20 pointer-events-none">
+                    <div class="text-[9px] text-slate-500 uppercase tracking-widest border-b border-slate-700 pb-1 mb-1">Entity Profile</div>
+                    <div class="font-bold text-slate-200">${city.entity}</div>
+                    <div class="text-[10px] text-slate-400 mt-1">TYPE: <span class="text-white">${city.type}</span></div>
+                    <div class="text-[10px] text-slate-400">LOC: <span class="text-white">${city.name}</span></div>
+                    <div class="text-[10px] text-cyan-500 mt-1 uppercase font-bold">AI Identified</div>
+                </div>
+            </div>
+        `;
+        mapContent.innerHTML += markerHtml;
+    });
+}
+
+function selectGeoNode(location, entity, type) {
+    const inspector = document.getElementById('inspector-content');
+    if(inspector) {
+        inspector.innerHTML = `
+            <div class="mb-4 border-b border-slate-700 pb-2">
+                <h3 class="text-sm font-bold text-slate-100 font-mono tracking-widest uppercase">Geospatial Entity Details</h3>
+                <p class="text-[10px] text-slate-400 mt-1 uppercase">Region: <span class="text-white font-bold">${location}</span></p>
+            </div>
+            <div class="space-y-4">
+                <div>
+                    <h4 class="text-[10px] font-semibold text-slate-500 uppercase tracking-widest mb-1">Target Identity</h4>
+                    <p class="text-xs font-mono text-slate-200 bg-slate-900 p-2 border border-slate-700">${entity}</p>
+                </div>
+                <div>
+                    <h4 class="text-[10px] font-semibold text-slate-500 uppercase tracking-widest mb-1">Classification</h4>
+                    <p class="text-xs font-mono text-slate-200 bg-slate-900 p-2 border border-slate-700">${type}</p>
+                </div>
+                <div>
+                    <h4 class="text-[10px] font-semibold text-slate-500 uppercase tracking-widest mb-1">Status</h4>
+                    <p class="text-xs font-mono text-emerald-400 font-bold bg-slate-900 p-2 border border-slate-700">Prototype Geospatial Pin</p>
+                </div>
+            </div>
+        `;
+        const rp = document.getElementById('right-pane');
+        if (rp) {
+            rp.classList.add('force-open');
+            rp.classList.remove('translate-x-full');
+        }
+    }
+}

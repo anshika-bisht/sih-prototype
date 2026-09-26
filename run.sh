@@ -4,12 +4,13 @@ echo "================================================="
 echo "   Starting CHAKRAVYUH Environment Setup...      "
 echo "================================================="
 
-# Use python3 by default on Mac/Linux, but fallback to python if python3 doesn't exist
-if command -v python3 &> /dev/null; then
-    PYTHON_CMD="python3"
-else
-    PYTHON_CMD="python"
+# Detect OS
+if [[ "$OSTYPE" == "msys"* || "$OSTYPE" == "cygwin"* || "$OSTYPE" == "mingw"* ]]; then
+    echo "[!] Error: You are on Windows. Please use .\run.ps1 via PowerShell."
+    exit 1
 fi
+
+PYTHON_CMD="python3"
 VENV_ACTIVATE="venv/bin/activate"
 
 # Check if Python is installed
